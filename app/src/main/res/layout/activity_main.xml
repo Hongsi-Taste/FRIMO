@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +21,7 @@
             android:tint="@android:color/white" />
     </androidx.appcompat.widget.Toolbar>
 
-
+    <!-- Frame, 여기에 여러 frame들이 바뀌면서 들어감 -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

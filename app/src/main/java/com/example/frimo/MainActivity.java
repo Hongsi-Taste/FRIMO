@@ -20,24 +20,14 @@ import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends FragmentActivity {
 
+    // fragement slide 관련
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
 
+    // powermenu 관련
     private PowerMenu hamburgerMenu;
-
-    private final OnMenuItemClickListener<PowerMenuItem> onHamburgerItemClickListener =
-            new OnMenuItemClickListener<PowerMenuItem>() {
-                @Override
-                public void onItemClick(int position, PowerMenuItem item) {
-                    Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
-                    hamburgerMenu.setSelectedPosition(position);
-                }
-            };
-
-    private final OnDismissedListener onHamburgerMenuDismissedListener =
-            () -> Log.d("Test", "onDismissed hamburger menu");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +56,7 @@ public class MainActivity extends FragmentActivity {
                 PowerMenuUtils.getHamburgerPowerMenu(
                         this, this, onHamburgerItemClickListener, onHamburgerMenuDismissedListener);
 
-        // Slide하여 fragment를 바꿀 때
+        // Slide하여 fragment를 바꿈
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -103,5 +93,20 @@ public class MainActivity extends FragmentActivity {
             hamburgerMenu.dismiss();
         }
     }
+
+    // hamburgermenu item click listener
+    private final OnMenuItemClickListener<PowerMenuItem> onHamburgerItemClickListener =
+            new OnMenuItemClickListener<PowerMenuItem>() {
+                @Override
+                public void onItemClick(int position, PowerMenuItem item) {
+                    Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
+                    hamburgerMenu.setSelectedPosition(position);
+                }
+            };
+
+    // hamburgermenu dismiss listener
+    private final OnDismissedListener onHamburgerMenuDismissedListener =
+            () -> Log.d("Test", "onDismissed hamburger menu");
+
 
 }

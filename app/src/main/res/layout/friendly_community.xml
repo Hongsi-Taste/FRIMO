@@ -3,6 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+        Frame이 바뀌는지 보기 위해 작성
+        Frame에 배경색과 어떤 frame에 해당하는지 작성
+    -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,11 +14,10 @@
 
         <ImageView
             android:id="@+id/imgBanner3"
-            android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#aaff88"
-            android:contentDescription="@string/app_name"/>
+            android:contentDescription="@string/app_name" />
 
         <TextView
             android:id="@+id/tvName3"

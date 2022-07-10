@@ -14,12 +14,13 @@ public class MyAdapter extends FragmentStateAdapter {
 
     public int mCount; // 생성할 fragment 갯수
 
+    // constructor
     public MyAdapter(FragmentActivity fa, int count) {
         super(fa);
         mCount = count;
     }
 
-    // fragment 생성
+    // 현재 위치에 맞는 fragment 반환
     @NonNull
     @Override
     public Fragment createFragment(int position) {
@@ -38,7 +39,11 @@ public class MyAdapter extends FragmentStateAdapter {
         return 2000;
     }
 
-    // position에서 프래그먼트 갯수로 나눈 나머지값이 진짜 position (슬라이드 4개이므로 0, 1, 2, 3이 반복)
+    // position에서 fragment 갯수로 나눈 나머지를 반환하며, 이 값으로 현재 fragment를 알 수 있다
+    // 0 : Little Me Diary
+    // 1 : Everytime FRIMO
+    // 2 : Friendly Community
+    // 3 : Trend Report
     public int getRealPosition(int position) { return position % mCount; }
 
 }

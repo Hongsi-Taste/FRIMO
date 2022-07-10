@@ -45,22 +45,22 @@ public class PowerMenuUtils {
         .addItem(new PowerMenuItem("Secret Mode", false))
         .addItem(new PowerMenuItem("Gallery Mode", false))
         .setAutoDismiss(true)
-        .setLifecycleOwner(lifecycleOwner)
+        .setLifecycleOwner(lifecycleOwner) // set LifecycleOwner for preventing memory leak.
         .setAnimation(MenuAnimation.SHOWUP_TOP_RIGHT) // popup시 menu가 뜨는 위치
-        .setCircularEffect(CircularEffect.BODY)
-        .setMenuRadius(10f)
-        .setMenuShadow(10f)
+        .setCircularEffect(CircularEffect.BODY) // shows circular revealed effects for all body of the popup menu.
+        .setMenuRadius(10f) // sets the popup corner radius.
+        .setMenuShadow(10f) // sets the popup shadow.
         .setTextColor(Color.BLACK)
         .setTextSize(12)
-        .setTextGravity(Gravity.CENTER)
+        .setTextGravity(Gravity.CENTER) // 글자 위치
         .setTextTypeface(Typeface.create("sans-serif-medium", Typeface.BOLD)) // 서체, 글꼴
         .setSelectedTextColor(Color.WHITE)
         .setMenuColor(Color.WHITE)
         .setSelectedMenuColor(ContextCompat.getColor(context, R.color.purple_200))
         .setOnMenuItemClickListener(onMenuItemClickListener)
         .setOnDismissListener(onDismissedListener)
-        .setPreferenceName("HamburgerPowerMenu")
-        .setInitializeRule(Lifecycle.Event.ON_CREATE, 0)
+        .setPreferenceName("HamburgerPowerMenu")  // saves the position automatically when the menu is selected. If we set the same preference name on the other PowerMenus, they will share the saving position.
+        .setInitializeRule(Lifecycle.Event.ON_CREATE, 0) // Lifecycle.Event and default position.
         .build();
   }
 
