@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.frimo.adapter.MyAdapter;
+import com.example.frimo.hamburgermenu.PowerMenuUtils;
 import com.skydoves.powermenu.OnDismissedListener;
 import com.skydoves.powermenu.OnMenuItemClickListener;
 import com.skydoves.powermenu.PowerMenu;
@@ -85,6 +87,7 @@ public class MainActivity extends FragmentActivity {
 
     }
 
+    // hamburgermenu
     public void onHamburger(View view) {
         if (hamburgerMenu.isShowing()) {
             hamburgerMenu.dismiss();
@@ -93,6 +96,7 @@ public class MainActivity extends FragmentActivity {
         hamburgerMenu.showAsDropDown(view);
     }
 
+    // when back button pressed, dismiss hamburgermenu
     @Override
     public void onBackPressed() {
         if (hamburgerMenu.isShowing()) {

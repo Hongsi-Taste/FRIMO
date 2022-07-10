@@ -1,9 +1,14 @@
-package com.example.frimo;
+package com.example.frimo.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.frimo.fragment.Everytime_FRIMO;
+import com.example.frimo.fragment.Friendly_Community;
+import com.example.frimo.fragment.Little_Me_Diary;
+import com.example.frimo.fragment.Trend_Report;
 
 public class MyAdapter extends FragmentStateAdapter {
 

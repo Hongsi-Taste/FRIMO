@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.frimo;
+package com.example.frimo.hamburgermenu;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
+import com.example.frimo.R;
 import com.skydoves.powermenu.CircularEffect;
 import com.skydoves.powermenu.MenuAnimation;
 import com.skydoves.powermenu.OnDismissedListener;
@@ -45,14 +46,14 @@ public class PowerMenuUtils {
         .addItem(new PowerMenuItem("Gallery Mode", false))
         .setAutoDismiss(true)
         .setLifecycleOwner(lifecycleOwner)
-        .setAnimation(MenuAnimation.SHOWUP_TOP_RIGHT)
+        .setAnimation(MenuAnimation.SHOWUP_TOP_RIGHT) // popup시 menu가 뜨는 위치
         .setCircularEffect(CircularEffect.BODY)
         .setMenuRadius(10f)
         .setMenuShadow(10f)
         .setTextColor(Color.BLACK)
         .setTextSize(12)
         .setTextGravity(Gravity.CENTER)
-        .setTextTypeface(Typeface.create("sans-serif-medium", Typeface.BOLD))
+        .setTextTypeface(Typeface.create("sans-serif-medium", Typeface.BOLD)) // 서체, 글꼴
         .setSelectedTextColor(Color.WHITE)
         .setMenuColor(Color.WHITE)
         .setSelectedMenuColor(ContextCompat.getColor(context, R.color.purple_200))
