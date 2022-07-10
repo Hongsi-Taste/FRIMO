@@ -24,22 +24,24 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //ViewPager2
+        // ViewPager2
         mPager = findViewById(R.id.viewpager);
-        //Adapter
+
+        // Adapter
         pagerAdapter = new MyAdapter(this, num_page);
         mPager.setAdapter(pagerAdapter);
 
-        //Indicator
+        // Indicator
         mIndicator = findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
         mIndicator.createIndicators(num_page,0);
 
-        //ViewPager Setting
+        // ViewPager Setting
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         mPager.setCurrentItem(1000); // 현재 위치를 1000으로 하여 양옆으로 슬라이딩할 수 있게
         mPager.setOffscreenPageLimit(3);
 
+        // Slide하여 fragment를 바꿀 때
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -57,21 +59,6 @@ public class MainActivity extends FragmentActivity {
 
         });
 
-
-        mPager.setPageTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                if (mPager.getOrientation() == ViewPager2.ORIENTATION_HORIZONTAL) {
-                    if (ViewCompat.getLayoutDirection(mPager) == ViewCompat.LAYOUT_DIRECTION_RTL) {
-                        page.setTranslationX(0);
-                    } else {
-                        page.setTranslationX(0);
-                    }
-                } else {
-                    page.setTranslationY(0);
-                }
-            }
-        });
 
     }
 
