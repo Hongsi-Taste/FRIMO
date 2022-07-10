@@ -5,6 +5,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
+import com.skydoves.powermenu.OnDismissedListener;
+import com.skydoves.powermenu.OnMenuItemClickListener;
+import com.skydoves.powermenu.PowerMenu;
+import com.skydoves.powermenu.PowerMenuItem;
 
 import me.relex.circleindicator.CircleIndicator3;
 
@@ -14,6 +22,20 @@ public class MainActivity extends FragmentActivity {
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
+
+    private PowerMenu hamburgerMenu;
+
+    private final OnMenuItemClickListener<PowerMenuItem> onHamburgerItemClickListener =
+            new OnMenuItemClickListener<PowerMenuItem>() {
+                @Override
+                public void onItemClick(int position, PowerMenuItem item) {
+                    Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
+                    hamburgerMenu.setSelectedPosition(position);
+                }
+            };
+
+    private final OnDismissedListener onHamburgerMenuDismissedListener =
+            () -> Log.d("Test", "onDismissed hamburger menu");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +59,11 @@ public class MainActivity extends FragmentActivity {
         mPager.setCurrentItem(1000); // 현재 위치를 1000으로 하여 양옆으로 슬라이딩할 수 있게
         mPager.setOffscreenPageLimit(3);
 
+        // hamburger menu
+        hamburgerMenu =
+                PowerMenuUtils.getHamburgerPowerMenu(
+                        this, this, onHamburgerItemClickListener, onHamburgerMenuDismissedListener);
+
         // Slide하여 fragment를 바꿀 때
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -56,6 +83,21 @@ public class MainActivity extends FragmentActivity {
         });
 
 
+    }
+
+    public void onHamburger(View view) {
+        if (hamburgerMenu.isShowing()) {
+            hamburgerMenu.dismiss();
+            return;
+        }
+        hamburgerMenu.showAsDropDown(view);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (hamburgerMenu.isShowing()) {
+            hamburgerMenu.dismiss();
+        }
     }
 
 }
