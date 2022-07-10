@@ -18,6 +18,9 @@ import com.skydoves.powermenu.PowerMenuItem;
 
 import me.relex.circleindicator.CircleIndicator3;
 
+// Todo: toolbar에 해당하는 이름 (E.g., Little Me Diary, Everytime FRIMO, 등) 작성하기
+// Todo: Little Me Diary 제외 Menu 가리기
+
 public class MainActivity extends FragmentActivity {
 
     // fragement slide 관련
@@ -44,7 +47,7 @@ public class MainActivity extends FragmentActivity {
         // Indicator
         mIndicator = findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
-        mIndicator.createIndicators(num_page,0);
+        mIndicator.createIndicators(num_page, 0);
 
         // ViewPager Setting
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
@@ -69,7 +72,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                mIndicator.animatePageSelected(position%num_page);
+                mIndicator.animatePageSelected(position % num_page);
             }
 
         });
