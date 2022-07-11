@@ -20,6 +20,7 @@ import me.relex.circleindicator.CircleIndicator3;
 
 // Todo: toolbar에 해당하는 이름 (E.g., Little Me Diary, Everytime FRIMO, 등) 작성하기
 // Todo: Little Me Diary 제외 Menu 가리기
+// Todo: Little Me Diary에서 Menu 클릭 시 해당 Mode로 전환하기
 
 public class MainActivity extends FragmentActivity {
 

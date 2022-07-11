@@ -8,6 +8,9 @@
         <entry key="app/src/main/res/layout/everytime_frimo.xml" value="0.1" />
         <entry key="app/src/main/res/layout/friendly_community.xml" value="0.26040554962646745" />
         <entry key="app/src/main/res/layout/little_me_diary.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/little_me_diary_friend_mode.xml" value="0.12708333333333333" />
+        <entry key="app/src/main/res/layout/little_me_diary_gallery_mode.xml" value="0.2541590372721354" />
+        <entry key="app/src/main/res/layout/little_me_diary_secret_mode.xml" value="0.1" />
         <entry key="app/src/main/res/layout/trend_report.xml" value="0.12708333333333333" />
       </map>
     </option>
