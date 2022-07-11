@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.frimo.fragment.Everytime_FRIMO;
-import com.example.frimo.fragment.Friendly_Community;
-import com.example.frimo.fragment.Little_Me_Diary_Friend_Mode;
-import com.example.frimo.fragment.Trend_Report;
+import com.example.frimo.fragment.EverytimeFRIMO;
+import com.example.frimo.fragment.FriendlyCommunity;
+import com.example.frimo.fragment.LittleMeDiaryFriendMode;
+import com.example.frimo.fragment.TrendReport;
 
 public class MyAdapter extends FragmentStateAdapter {
 
@@ -21,10 +21,10 @@ public class MyAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if(position==0) return new Little_Me_Diary_Friend_Mode();
-        else if(position==1) return new Everytime_FRIMO();
-        else if(position==2) return new Friendly_Community();
-        else return new Trend_Report();
+        if(position==0) return new LittleMeDiaryFriendMode();
+        else if(position==1) return new EverytimeFRIMO();
+        else if(position==2) return new FriendlyCommunity();
+        else return new TrendReport();
 
     }
 

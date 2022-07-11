@@ -9,15 +9,16 @@ import androidx.fragment.app.Fragment;
 
 import com.example.frimo.R;
 
-public class Little_Me_Diary_Friend_Mode extends Fragment {
+public class FriendlyCommunity extends Fragment {
 
     // Fragment를 만들고 레이아웃이랑 연결
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.little_me_diary_friend_mode, container, false);
+                R.layout.friendly_community, container, false);
 
         return rootView;
     }
+
 }
