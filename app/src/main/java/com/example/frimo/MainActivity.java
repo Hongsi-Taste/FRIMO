@@ -136,6 +136,10 @@ public class MainActivity extends FragmentActivity {
                     hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
 
                     // Todo: Menu 클릭 시 해당 Mode로 전환 및 toolbar text 변경
+                    switch(position){
+                        case 0:
+
+                    }
 
 
                 }
