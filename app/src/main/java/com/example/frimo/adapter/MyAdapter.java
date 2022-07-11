@@ -12,12 +12,9 @@ import com.example.frimo.fragment.Trend_Report;
 
 public class MyAdapter extends FragmentStateAdapter {
 
-    public int mCount; // 생성할 fragment 갯수
-
     // constructor
-    public MyAdapter(FragmentActivity fa, int count) {
+    public MyAdapter(FragmentActivity fa) {
         super(fa);
-        mCount = count;
     }
 
     // 현재 위치에 맞는 fragment 반환
