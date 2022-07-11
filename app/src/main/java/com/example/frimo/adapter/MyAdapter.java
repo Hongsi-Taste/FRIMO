@@ -24,11 +24,9 @@ public class MyAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        int index = getRealPosition(position);
-
-        if(index==0) return new Little_Me_Diary_Friend_Mode();
-        else if(index==1) return new Everytime_FRIMO();
-        else if(index==2) return new Friendly_Community();
+        if(position==0) return new Little_Me_Diary_Friend_Mode();
+        else if(position==1) return new Everytime_FRIMO();
+        else if(position==2) return new Friendly_Community();
         else return new Trend_Report();
 
     }
@@ -37,12 +35,5 @@ public class MyAdapter extends FragmentStateAdapter {
     public int getItemCount() {
         return 4;
     }
-
-    // position에서 fragment 갯수로 나눈 나머지를 반환하며, 이 값으로 현재 fragment를 알 수 있다
-    // 0 : Little Me Diary
-    // 1 : Everytime FRIMO
-    // 2 : Friendly Community
-    // 3 : Trend Report
-    public int getRealPosition(int position) { return position % mCount; }
 
 }
