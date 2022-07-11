@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.frimo.fragment.Everytime_FRIMO;
 import com.example.frimo.fragment.Friendly_Community;
-import com.example.frimo.fragment.Little_Me_Diary;
+import com.example.frimo.fragment.Little_Me_Diary_Friend_Mode;
 import com.example.frimo.fragment.Trend_Report;
 
 public class MyAdapter extends FragmentStateAdapter {
@@ -26,17 +26,16 @@ public class MyAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         int index = getRealPosition(position);
 
-        if(index==0) return new Little_Me_Diary();
+        if(index==0) return new Little_Me_Diary_Friend_Mode();
         else if(index==1) return new Everytime_FRIMO();
         else if(index==2) return new Friendly_Community();
         else return new Trend_Report();
 
     }
 
-    // 프래그먼트를 무한으로 슬라이딩하기위해 getItemCount()는 2000으로 임의로 설정. (2000번의 슬라이딩)
     @Override
     public int getItemCount() {
-        return 2000;
+        return 4;
     }
 
     // position에서 fragment 갯수로 나눈 나머지를 반환하며, 이 값으로 현재 fragment를 알 수 있다

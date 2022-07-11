@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity {
 
         // ViewPager Setting
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
-        mPager.setCurrentItem(1000); // 현재 위치를 1000으로 하여 양옆으로 슬라이딩할 수 있게
+        mPager.setCurrentItem(0); // 현재 위치는 little me diary
         mPager.setOffscreenPageLimit(3);
 
         // hamburger menu
@@ -102,8 +102,8 @@ public class MainActivity extends FragmentActivity {
             new OnMenuItemClickListener<PowerMenuItem>() {
                 @Override
                 public void onItemClick(int position, PowerMenuItem item) {
-                    Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
-                    hamburgerMenu.setSelectedPosition(position);
+                    Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show(); // toast message
+                    hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
                 }
             };
 
