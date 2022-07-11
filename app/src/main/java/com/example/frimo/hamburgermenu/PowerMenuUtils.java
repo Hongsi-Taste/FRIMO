@@ -46,7 +46,7 @@ public class PowerMenuUtils {
         .addItem(new PowerMenuItem("Gallery Mode", false))
         .setAutoDismiss(true)
         .setLifecycleOwner(lifecycleOwner) // set LifecycleOwner for preventing memory leak.
-        .setAnimation(MenuAnimation.SHOWUP_TOP_RIGHT) // popup시 menu가 뜨는 위치
+        .setAnimation(MenuAnimation.SHOWUP_TOP_LEFT) // popup시 menu가 뜨는 위치
         .setCircularEffect(CircularEffect.BODY) // shows circular revealed effects for all body of the popup menu.
         .setMenuRadius(10f) // sets the popup corner radius.
         .setMenuShadow(10f) // sets the popup shadow.
