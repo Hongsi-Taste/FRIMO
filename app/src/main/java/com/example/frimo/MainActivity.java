@@ -73,7 +73,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                mIndicator.animatePageSelected(position % num_page);
+                mIndicator.animatePageSelected(position);
             }
 
         });
