@@ -78,22 +78,22 @@ public class MainActivity extends FragmentActivity {
                     switch (position) {
                         case 0:
                             menu.setVisibility(View.VISIBLE);
-                            toolbar_text.setText("Little Me Diary");
+                            toolbar_text.setText(R.string.little_me_diary);
                             break;
 
                         case 1:
                             menu.setVisibility(View.GONE);
-                            toolbar_text.setText("Everytime FRIMO");
+                            toolbar_text.setText(R.string.everytime_frimo);
                             break;
 
                         case 2:
                             menu.setVisibility(View.GONE);
-                            toolbar_text.setText("Friendly Community");
+                            toolbar_text.setText(R.string.friendly_community);
                             break;
 
                         case 3:
                             menu.setVisibility(View.GONE);
-                            toolbar_text.setText("Trend Report");
+                            toolbar_text.setText(R.string.trend_report);
                             break;
                     }
                 }
@@ -141,17 +141,17 @@ public class MainActivity extends FragmentActivity {
                     switch (position) {
                         case 0:
                             // fragment 전환
-                            toolbar_text.setText("Friend Mode");
+                            toolbar_text.setText(R.string.friend_mode);
                             break;
 
                         case 1:
                             // fragment 전환
-                            toolbar_text.setText("Secret Mode");
+                            toolbar_text.setText(R.string.secret_mode);
                             break;
 
                         case 2:
                             // fragment 전환
-                            toolbar_text.setText("Gallery Mode");
+                            toolbar_text.setText(R.string.gallery_mode);
                             break;
 
                     }

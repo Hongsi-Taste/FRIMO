@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">FRIMO</string>
 
+    <string name="little_me_diary">Little Me Diary</string>
     <string name="diary_friend">Little Me Diary Friend Mode</string>
     <string name="diary_secret">Little Me Diary Secret Mode</string>
     <string name="diary_gallery">Little Me Diary Gallery Mode</string>
+    <string name="friend_mode">Friend Mode</string>
+    <string name="secret_mode">Secret Mode</string>
+    <string name="gallery_mode">Gallery Mode</string>
+
     <string name="everytime_frimo">Everytime FRIMO</string>
     <string name="friendly_community">Friendly Community</string>
     <string name="trend_report">Trend Report</string>
