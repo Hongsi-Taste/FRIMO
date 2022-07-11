@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class MainActivity extends FragmentActivity {
     private CircleIndicator3 mIndicator;
 
     // powermenu 관련
+    private ImageView img_hamburgerMenu;
     private PowerMenu hamburgerMenu;
 
     @Override
@@ -56,6 +58,7 @@ public class MainActivity extends FragmentActivity {
         mPager.setOffscreenPageLimit(3);
 
         // hamburger menu
+        img_hamburgerMenu = findViewById(R.id.img_hamburgermenu);
         hamburgerMenu =
                 PowerMenuUtils.getHamburgerPowerMenu(
                         this, this, onHamburgerItemClickListener, onHamburgerMenuDismissedListener);
@@ -71,23 +74,27 @@ public class MainActivity extends FragmentActivity {
                     mPager.setCurrentItem(position);
 
                     // 해당하는 fragment에 따라 toolbar의 text 변경
-                    // Todo: 메뉴 제거 (햄버거 메뉴는 오직 little me diary에서만)
+                    // little me diary 제외하고 hamburgermenu 가리기
                     switch (position){
                         case 0:
+                            img_hamburgerMenu.setVisibility(View.VISIBLE);
                             toolbar_text.setText("Little Me Diary");
                             break;
 
                         case 1:
+                            img_hamburgerMenu.setVisibility(View.GONE);
                             toolbar_text.setText("Everytime FRIMO");
                             break;
 
                         case 2:
+                            img_hamburgerMenu.setVisibility(View.GONE);
                             toolbar_text.setText("Friendly Community");
                             break;
 
                         case 3:
-                           toolbar_text.setText("Trend Report");
-                           break;
+                            img_hamburgerMenu.setVisibility(View.GONE);
+                            toolbar_text.setText("Trend Report");
+                            break;
                     }
                 }
             }
