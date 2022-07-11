@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.frimo.adapter.MyAdapter;
@@ -18,9 +19,6 @@ import com.skydoves.powermenu.PowerMenuItem;
 
 import me.relex.circleindicator.CircleIndicator3;
 
-// Todo: toolbar에 해당하는 이름 (E.g., Little Me Diary, Everytime FRIMO, 등) 작성하기
-// Todo: Little Me Diary 제외 Menu 가리기
-// Todo: Little Me Diary에서 Menu 클릭 시 해당 Mode로 전환하기
 
 public class MainActivity extends FragmentActivity {
 
@@ -37,6 +35,8 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView toolbar_text = findViewById(R.id.toolbar_text);
 
         // ViewPager2
         mPager = findViewById(R.id.viewpager);
@@ -62,11 +62,33 @@ public class MainActivity extends FragmentActivity {
 
         // Slide하여 fragment를 바꿈
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+
+            // This method will be invoked when the current page is scrolled, either as part of a programmatically initiated smooth scroll or a user initiated touch scroll.
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels);
                 if (positionOffsetPixels == 0) {
                     mPager.setCurrentItem(position);
+
+                    // 해당하는 fragment에 따라 toolbar의 text 변경
+                    // Todo: 메뉴 제거 (햄버거 메뉴는 오직 little me diary에서만)
+                    switch (position){
+                        case 0:
+                            toolbar_text.setText("Little Me Diary");
+                            break;
+
+                        case 1:
+                            toolbar_text.setText("Everytime FRIMO");
+                            break;
+
+                        case 2:
+                            toolbar_text.setText("Friendly Community");
+                            break;
+
+                        case 3:
+                           toolbar_text.setText("Trend Report");
+                           break;
+                    }
                 }
             }
 
@@ -105,6 +127,10 @@ public class MainActivity extends FragmentActivity {
                 public void onItemClick(int position, PowerMenuItem item) {
                     Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show(); // toast message
                     hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
+
+                    // Todo: Menu 클릭 시 해당 Mode로 전환 및 toolbar text 변경
+
+
                 }
             };
 
