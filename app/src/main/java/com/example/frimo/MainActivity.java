@@ -23,22 +23,23 @@ import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends FragmentActivity {
 
-    // fragement slide 관련
+    // fragement slide
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
 
-    // powermenu 관련
+    // toolbar
     private ImageView img_hamburgerMenu;
     private PowerMenu hamburgerMenu;
+    private TextView toolbar_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView toolbar_text = findViewById(R.id.toolbar_text);
+        toolbar_text = findViewById(R.id.toolbar_text);
 
         // ViewPager2
         mPager = findViewById(R.id.viewpager);
@@ -75,7 +76,7 @@ public class MainActivity extends FragmentActivity {
 
                     // 해당하는 fragment에 따라 toolbar의 text 변경
                     // little me diary 제외하고 hamburgermenu 가리기
-                    switch (position){
+                    switch (position) {
                         case 0:
                             img_hamburgerMenu.setVisibility(View.VISIBLE);
                             toolbar_text.setText("Little Me Diary");
@@ -135,12 +136,25 @@ public class MainActivity extends FragmentActivity {
                     Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show(); // toast message
                     hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
 
-                    // Todo: Menu 클릭 시 해당 Mode로 전환 및 toolbar text 변경
-                    switch(position){
+                    // Todo: Menu 클릭 시 해당 Mode로 전환
+                    // menu 클릭 시 fragment 전환 및 text 변경
+                    switch (position) {
                         case 0:
+                            // fragment 전환
+                            toolbar_text.setText("Friend Mode");
+                            break;
+
+                        case 1:
+                            // fragment 전환
+                            toolbar_text.setText("Secret Mode");
+                            break;
+
+                        case 2:
+                            // fragment 전환
+                            toolbar_text.setText("Gallery Mode");
+                            break;
 
                     }
-
 
                 }
             };
