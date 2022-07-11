@@ -41,7 +41,7 @@ public class PowerMenuUtils {
       OnMenuItemClickListener<PowerMenuItem> onMenuItemClickListener,
       OnDismissedListener onDismissedListener) {
     return new PowerMenu.Builder(context)
-        .addItem(new PowerMenuItem("Friendly Mode", true))
+        .addItem(new PowerMenuItem("Friend Mode", true))
         .addItem(new PowerMenuItem("Secret Mode", false))
         .addItem(new PowerMenuItem("Gallery Mode", false))
         .setAutoDismiss(true)
