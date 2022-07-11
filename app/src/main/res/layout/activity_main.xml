@@ -13,7 +13,7 @@
         android:background="@color/purple_500">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_hamburgermenu"
+            android:id="@+id/menu"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:onClick="onHamburger"

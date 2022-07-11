@@ -23,14 +23,14 @@ import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends FragmentActivity {
 
-    // fragement slide
+    // Slide fragement
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
 
-    // toolbar
-    private ImageView img_hamburgerMenu;
+    // Tool bar
+    private ImageView menu;
     private PowerMenu hamburgerMenu;
     private TextView toolbar_text;
 
@@ -39,8 +39,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar_text = findViewById(R.id.toolbar_text);
-
         // ViewPager2
         mPager = findViewById(R.id.viewpager);
 
@@ -48,7 +46,7 @@ public class MainActivity extends FragmentActivity {
         pagerAdapter = new MyAdapter(this);
         mPager.setAdapter(pagerAdapter);
 
-        // Indicator
+        // Indicator (아래 동그란 거 4개)
         mIndicator = findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
         mIndicator.createIndicators(num_page, 0);
@@ -58,13 +56,14 @@ public class MainActivity extends FragmentActivity {
         mPager.setCurrentItem(0); // 현재 위치는 little me diary
         mPager.setOffscreenPageLimit(3);
 
-        // hamburger menu
-        img_hamburgerMenu = findViewById(R.id.img_hamburgermenu);
+        // Tool bar
+        menu = findViewById(R.id.menu);
+        toolbar_text = findViewById(R.id.toolbar_text);
         hamburgerMenu =
                 PowerMenuUtils.getHamburgerPowerMenu(
                         this, this, onHamburgerItemClickListener, onHamburgerMenuDismissedListener);
 
-        // Slide하여 fragment를 바꿈
+        // Slide 하여 fragment를 바꿈
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
 
             // This method will be invoked when the current page is scrolled, either as part of a programmatically initiated smooth scroll or a user initiated touch scroll.
@@ -74,32 +73,33 @@ public class MainActivity extends FragmentActivity {
                 if (positionOffsetPixels == 0) {
                     mPager.setCurrentItem(position);
 
-                    // 해당하는 fragment에 따라 toolbar의 text 변경
-                    // little me diary 제외하고 hamburgermenu 가리기
+                    // Fragment가 변경됨에 따라 tool bar의 text 변경
+                    // Little me diary 제외하고 menu 가리기
                     switch (position) {
                         case 0:
-                            img_hamburgerMenu.setVisibility(View.VISIBLE);
+                            menu.setVisibility(View.VISIBLE);
                             toolbar_text.setText("Little Me Diary");
                             break;
 
                         case 1:
-                            img_hamburgerMenu.setVisibility(View.GONE);
+                            menu.setVisibility(View.GONE);
                             toolbar_text.setText("Everytime FRIMO");
                             break;
 
                         case 2:
-                            img_hamburgerMenu.setVisibility(View.GONE);
+                            menu.setVisibility(View.GONE);
                             toolbar_text.setText("Friendly Community");
                             break;
 
                         case 3:
-                            img_hamburgerMenu.setVisibility(View.GONE);
+                            menu.setVisibility(View.GONE);
                             toolbar_text.setText("Trend Report");
                             break;
                     }
                 }
             }
 
+            // Fragment가 변경됨에 따라 indicator 수정
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
@@ -120,7 +120,7 @@ public class MainActivity extends FragmentActivity {
         hamburgerMenu.showAsDropDown(view);
     }
 
-    // when back button pressed, dismiss hamburgermenu
+    // hamburgermenu가 띄워져 있는 상태에서 뒤로가기 버튼이 눌렀을 때 끄기
     @Override
     public void onBackPressed() {
         if (hamburgerMenu.isShowing()) {
@@ -137,7 +137,7 @@ public class MainActivity extends FragmentActivity {
                     hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
 
                     // Todo: Menu 클릭 시 해당 Mode로 전환
-                    // menu 클릭 시 fragment 전환 및 text 변경
+                    // Hamburgermenu에서 Mode 클릭 시 fragment 전환 및 text 변경
                     switch (position) {
                         case 0:
                             // fragment 전환
