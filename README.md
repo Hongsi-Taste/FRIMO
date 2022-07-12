@@ -2,7 +2,7 @@
 
 ### 1. 배운 내용
 ####   1) Naming convention
-File
+##### File Name
 | Component        | Class Name             | Layout Name                   |
 | ---------------- | ---------------------- | ----------------------------- |
 | Activity         | `UserProfileActivity`  | `activity_user_profile.xml`   |
