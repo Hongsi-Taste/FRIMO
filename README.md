@@ -2,11 +2,5 @@
 
 ### 1. 배운 내용
 ####   1) Naming convention
-##### File Name
-| Component        | Class Name             | Layout Name                   |
-| ---------------- | ---------------------- | ----------------------------- |
-| Activity         | `UserProfileActivity`  | `activity_user_profile.xml`   |
-| Fragment         | `SignUpFragment`       | `fragment_sign_up.xml`        |
-| Dialog           | `ChangePasswordDialog` | `dialog_change_password.xml`  |
-| AdapterView item | ---                    | `item_person.xml`             |
-| Partial layout   | ---                    | `partial_stats_bar.xml`       |
+    https://github.com/leapfrogtechnology/android-guidelines/blob/master/ResourcesGuidelines.md
+    참고하여 파일, 변수 이름 설정하자
