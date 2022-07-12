@@ -29,6 +29,13 @@ android {
 
 dependencies {
 
+    // fragment 간 slide로 넘기기 (ViewPager2 와 Indicator를 사용하기위해 추가)
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // powermenu
+    implementation "com.github.skydoves:powermenu:2.2.0"
+
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
