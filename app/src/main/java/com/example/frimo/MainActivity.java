@@ -1,7 +1,6 @@
 package com.example.frimo;
 
 import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
@@ -25,7 +24,7 @@ public class MainActivity extends FragmentActivity {
 
     // Slide fragement
     private ViewPager2 mPager;
-    private FragmentStateAdapter pagerAdapter;
+    private MyAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
 
@@ -43,7 +42,7 @@ public class MainActivity extends FragmentActivity {
         mPager = findViewById(R.id.viewpager);
 
         // Adapter
-        pagerAdapter = new MyAdapter(this);
+        pagerAdapter = new MyAdapter(this, Mode.FRIEND);
         mPager.setAdapter(pagerAdapter);
 
         // Indicator (아래 동그란 거 4개)
@@ -133,29 +132,30 @@ public class MainActivity extends FragmentActivity {
             new OnMenuItemClickListener<PowerMenuItem>() {
                 @Override
                 public void onItemClick(int position, PowerMenuItem item) {
+
                     Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show(); // toast message
                     hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
 
-                    // Todo: Menu 클릭 시 해당 Mode로 전환
                     // Hamburgermenu에서 Mode 클릭 시 fragment 전환 및 text 변경
                     switch (position) {
                         case 0:
-                            // fragment 전환
                             toolbar_text.setText(R.string.friend_mode);
+                            pagerAdapter.setMode(Mode.FRIEND);
+                            pagerAdapter.notifyDataSetChanged();
                             break;
 
                         case 1:
-                            // fragment 전환
                             toolbar_text.setText(R.string.secret_mode);
+                            pagerAdapter.setMode(Mode.SECRET);
+                            pagerAdapter.notifyDataSetChanged();
                             break;
 
                         case 2:
-                            // fragment 전환
                             toolbar_text.setText(R.string.gallery_mode);
+                            pagerAdapter.setMode(Mode.GALLERY);
+                            pagerAdapter.notifyDataSetChanged();
                             break;
-
                     }
-
                 }
             };
 
