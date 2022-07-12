@@ -29,9 +29,9 @@ public class MainActivity extends FragmentActivity {
     private CircleIndicator3 mIndicator;
 
     // Tool bar
-    private ImageView menu;
+    private ImageView ic_menu;
     private PowerMenu hamburgerMenu;
-    private TextView toolbar_text;
+    private TextView textview_toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +56,8 @@ public class MainActivity extends FragmentActivity {
         mPager.setOffscreenPageLimit(3);
 
         // Tool bar
-        menu = findViewById(R.id.menu);
-        toolbar_text = findViewById(R.id.toolbar_text);
+        ic_menu = findViewById(R.id.ic_menu);
+        textview_toolbar = findViewById(R.id.textview_toolbar);
         hamburgerMenu =
                 PowerMenuUtils.getHamburgerPowerMenu(
                         this, this, onHamburgerItemClickListener, onHamburgerMenuDismissedListener);
@@ -76,23 +76,23 @@ public class MainActivity extends FragmentActivity {
                     // Little me diary 제외하고 menu 가리기
                     switch (position) {
                         case 0:
-                            menu.setVisibility(View.VISIBLE);
-                            toolbar_text.setText(R.string.little_me_diary);
+                            ic_menu.setVisibility(View.VISIBLE);
+                            textview_toolbar.setText(R.string.little_me_diary);
                             break;
 
                         case 1:
-                            menu.setVisibility(View.GONE);
-                            toolbar_text.setText(R.string.everytime_frimo);
+                            ic_menu.setVisibility(View.GONE);
+                            textview_toolbar.setText(R.string.everytime_frimo);
                             break;
 
                         case 2:
-                            menu.setVisibility(View.GONE);
-                            toolbar_text.setText(R.string.friendly_community);
+                            ic_menu.setVisibility(View.GONE);
+                            textview_toolbar.setText(R.string.friendly_community);
                             break;
 
                         case 3:
-                            menu.setVisibility(View.GONE);
-                            toolbar_text.setText(R.string.trend_report);
+                            ic_menu.setVisibility(View.GONE);
+                            textview_toolbar.setText(R.string.trend_report);
                             break;
                     }
                 }
@@ -139,19 +139,19 @@ public class MainActivity extends FragmentActivity {
                     // Hamburgermenu에서 Mode 클릭 시 fragment 전환 및 text 변경
                     switch (position) {
                         case 0:
-                            toolbar_text.setText(R.string.friend_mode);
+                            textview_toolbar.setText(R.string.friend_mode);
                             pagerAdapter.setMode(Mode.FRIEND);
                             pagerAdapter.notifyDataSetChanged();
                             break;
 
                         case 1:
-                            toolbar_text.setText(R.string.secret_mode);
+                            textview_toolbar.setText(R.string.secret_mode);
                             pagerAdapter.setMode(Mode.SECRET);
                             pagerAdapter.notifyDataSetChanged();
                             break;
 
                         case 2:
-                            toolbar_text.setText(R.string.gallery_mode);
+                            textview_toolbar.setText(R.string.gallery_mode);
                             pagerAdapter.setMode(Mode.GALLERY);
                             pagerAdapter.notifyDataSetChanged();
                             break;
