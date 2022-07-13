@@ -1,9 +1,16 @@
 # FRIMO
 
 ### 1. 예상 작업
-    현재까지 작업 한 내용에 대한 깊이 있는 이해
+```
+현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
     
-    UI 작업. Fragment에 들어있는 내용 수정
+UI 작업
+  < Friendly Community >
+  - Edit profile button 클릭 시 profile을 조명하며 메뉴 나오기
+  - Recycleview에서 user 클릭 시 위치를 보고 싶냐는 메뉴 나오기
+  - Contents, Friend Candidate button 클릭 시 event
+  
+```
 
 ### 2. Refactoring 예상 작업
     Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
@@ -19,6 +26,8 @@
   - getSupportFragmentManager().beginTransaction().replace().commit()
   - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
+
+현재 ballon을 보고 작업 중인데 Kotlin 언어에 대해 무지하다 보니 코드 이해가 어려움
 
 ```
 
@@ -46,6 +55,6 @@ Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉�
 ```
 White space is required before the encoding pseudo attribute in the XML declaration.
   '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
-  가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주자
+  가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주고 해결
   
 ```
