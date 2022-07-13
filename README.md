@@ -69,5 +69,11 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
     1. White space is required before the encoding pseudo attribute in the XML declaration.
       '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
       가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주고 해결
+      
+6) Kotlin
+    1. Java <-> Kotlin
+      Java -> Kotlin : Code > Convert java file to kotlin file
+      Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile (정확하지는 않은 듯한 느낌을 받음)
+
   
 ```
