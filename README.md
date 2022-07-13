@@ -9,7 +9,8 @@
 
 ### 2. 배운 내용
 #### 1) Naming convention
-    <a href="https://github.com/leapfrogtechnology/android-guidelines/blob/master/ResourcesGuidelines.md" target="_blank">Naming convention</a>참고하여 파일 및 변수 이름 설정하자      
+    https://github.com/leapfrogtechnology/android-guidelines/blob/master/ResourcesGuidelines.md
+    참고하여 파일 및 변수 이름 설정하자      
 
 #### 2) Context
     Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉장히 복잡하게 되어있어서 한마디로 설명하기 어렵다.
@@ -26,7 +27,7 @@
     Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
 
 ### 4. 어려웠던 점
-
+```
     처음으로 opensource 라이브러리를(powermenu) 사용했는데 guide를 보고 진행했음에도 menu를 생성하는 작업이 잘 안되었음
     -> code clone해서 작업 및 엄재웅 선배님께 context에 대해 질문 및 학습 진행
     
@@ -34,4 +35,4 @@
     - getSupportFragmentManager().beginTransaction().replace().commit()
     - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
     2가지 사항 진행해도 해결 못함 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
-
+```
