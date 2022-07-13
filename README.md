@@ -3,9 +3,7 @@
 ### 1. 예상 작업
     현재까지 작업 한 내용에 대한 깊이 있는 이해
     
-    Fragment에 들어있는 내용 제거 (fragment가 잘 전환된다는 것을 확인함)
-    
-    UI
+    UI 작업. Fragment에 들어있는 내용 수정
 
 ### 2. Refactoring 예상 작업
     Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
