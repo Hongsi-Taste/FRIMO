@@ -19,8 +19,11 @@
 ```
 
 ### 2. Refactoring 예상 작업
-    Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
+```
+Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
 
+Kotlin
+```
 ----------
 
 ### 3. 어려웠던 점
