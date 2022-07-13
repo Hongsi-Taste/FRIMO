@@ -7,7 +7,23 @@
     
     UI
 
-### 2. 배운 내용
+### 2. Refactoring 예상 작업
+    Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
+
+----------
+
+### 3. 어려웠던 점
+```
+처음으로 opensource 라이브러리를(powermenu) 사용했는데 guide를 보고 진행했음에도 menu를 생성하는 작업이 잘 안되었음
+-> code clone해서 작업 및 엄재웅 선배님께 context에 대해 질문 및 학습 진행
+
+4개의 fragment slide 작업 이후 powermenu를 click해서 3개의 fragment를 전환하는 작업
+  - getSupportFragmentManager().beginTransaction().replace().commit()
+  - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
+2가지 사항 진행해도 해결 못함 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
+```
+
+### 4. 배운 내용
 #### 1) Naming convention
     https://github.com/leapfrogtechnology/android-guidelines/blob/master/ResourcesGuidelines.md
     참고하여 파일 및 변수 이름 설정하자      
@@ -24,16 +40,5 @@ Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉�
 #### 3) View
     추후 작성
 
-### 3. Refactoring 예상 작업
-    Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
-
-### 4. 어려웠던 점
-```
-처음으로 opensource 라이브러리를(powermenu) 사용했는데 guide를 보고 진행했음에도 menu를 생성하는 작업이 잘 안되었음
--> code clone해서 작업 및 엄재웅 선배님께 context에 대해 질문 및 학습 진행
-
-4개의 fragment slide 작업 이후 powermenu를 click해서 3개의 fragment를 전환하는 작업
-  - getSupportFragmentManager().beginTransaction().replace().commit()
-  - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
-2가지 사항 진행해도 해결 못함 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
-```
+#### 4) ReadMe.md
+    Readme 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
