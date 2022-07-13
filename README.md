@@ -41,6 +41,8 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
 
 현재 ballon을 보고 작업 중인데 Kotlin 언어에 대해 무지하다 보니 코드 이해가 어려움
+-> 구굴링
+-> https://kotlinlang.org/docs/home.html
 
 ```
 
