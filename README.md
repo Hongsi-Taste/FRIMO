@@ -59,7 +59,7 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
       - Application Context 같은 경우는 안드로이드 processor의 전반적인 시스템 resource에 대한 management를
       - Acitivty의 Context의 경우에는 주로 안드로이드의 UI를 구성하기 위한 컴포넌트들에 대한 management를 (제공, 관리 등등) 한다.
 
-3) View
+3) View and ViewGroup / Adapter
     추후 작성
 
 4) ReadMe.md
