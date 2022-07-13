@@ -41,3 +41,11 @@ Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉�
 
 #### 4) ReadMe.md
     Readme 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
+    
+#### 5) Error
+```
+White space is required before the encoding pseudo attribute in the XML declaration.
+  '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
+  가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주자
+  
+```
