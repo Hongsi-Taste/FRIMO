@@ -2,9 +2,9 @@
 
 ### 1. 예상 작업
 ```
-현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
+1) 현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
     
-UI 작업
+2) UI 작업
   - Little Me Diary
   
   - Everytime FRIMO
@@ -38,29 +38,27 @@ UI 작업
 ```
 
 ### 4. 배운 내용
-#### 1) Naming convention
+```
+1) Naming convention
     https://github.com/leapfrogtechnology/android-guidelines/blob/master/ResourcesGuidelines.md
     참고하여 파일 및 변수 이름 설정하자      
 
-#### 2) Context
-```
-Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉장히 복잡하게 되어있어서 한마디로 설명하기 어렵다.
+2) Context
+    Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉장히 복잡하게 되어있어서 한마디로 설명하기 어렵다.
 
-일반적으로 구분이 가능한 대표적인 Context로는 Application Context와 Activity에서 제공하는 Context 이렇게 두 가지가 있는데
-  - Application Context 같은 경우는 안드로이드 processor의 전반적인 시스템 resource에 대한 management를
-  - Acitivty의 Context의 경우에는 주로 안드로이드의 UI를 구성하기 위한 컴포넌트들에 대한 management를 (제공, 관리 등등) 한다.
-```
-    
-#### 3) View
+    일반적으로 구분이 가능한 대표적인 Context로는 Application Context와 Activity에서 제공하는 Context 이렇게 두 가지가 있는데
+      - Application Context 같은 경우는 안드로이드 processor의 전반적인 시스템 resource에 대한 management를
+      - Acitivty의 Context의 경우에는 주로 안드로이드의 UI를 구성하기 위한 컴포넌트들에 대한 management를 (제공, 관리 등등) 한다.
+
+3) View
     추후 작성
 
-#### 4) ReadMe.md
+4) ReadMe.md
     Readme 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
     
-#### 5) Error
-```
-White space is required before the encoding pseudo attribute in the XML declaration.
-  '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
-  가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주고 해결
+5) Error
+    1. White space is required before the encoding pseudo attribute in the XML declaration.
+      '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
+      가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주고 해결
   
 ```
