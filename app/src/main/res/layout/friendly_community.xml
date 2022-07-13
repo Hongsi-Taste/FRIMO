@@ -1,37 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Designed and developed by 2019 skydoves (Jaewoong Eum)
+
+    Licensed under the Stream License;
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--
-        Frame이 바뀌는지 보기 위해 작성
-        Frame에 배경색과 어떤 frame에 해당하는지 작성
-    -->
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imgBanner3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#aaff88"
-            android:contentDescription="@string/app_name" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_user"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageStyle" />
 
         <TextView
-            android:id="@+id/tvName3"
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="user name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/circleImageView"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="description"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/interests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="32"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/contents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/label_interests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Interests"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/interests"
+            app:layout_constraintStart_toStartOf="@id/interests"
+            app:layout_constraintTop_toBottomOf="@id/interests"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/contents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="876"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/followers"
+            app:layout_constraintStart_toEndOf="@id/interests"
+            app:layout_constraintTop_toTopOf="@id/interests"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/label_contents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Contents"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/contents"
+            app:layout_constraintStart_toStartOf="@id/contents"
+            app:layout_constraintTop_toBottomOf="@id/contents"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="2333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/following"
+            app:layout_constraintStart_toEndOf="@id/contents"
+            app:layout_constraintTop_toTopOf="@id/contents"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/label_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Followers"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/followers"
+            app:layout_constraintStart_toStartOf="@id/followers"
+            app:layout_constraintTop_toBottomOf="@id/followers"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="21"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/followers"
+            app:layout_constraintTop_toTopOf="@id/followers"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Following"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/following"
+            app:layout_constraintStart_toStartOf="@id/following"
+            app:layout_constraintTop_toBottomOf="@id/following"
+            tools:ignore="HardcodedText"/>
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_interests"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@string/friendly_community"/>
+            android:id="@+id/linearlayout"
+            android:orientation="horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintTop_toBottomOf="@id/edit"
+            app:layout_constraintBottom_toTopOf="@id/recyclerView">
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btn_contents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:text="Contents"
+                android:textAllCaps="false"
+                android:layout_marginEnd="4dp"
+                tools:ignore="HardcodedText" />
 
+            <Button
+                android:id="@+id/btn_friend_candidate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:text="Friend Candidate"
+                android:textAllCaps="false"
+                android:layout_marginStart="4dp"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearlayout"
+            tools:listitem="@layout/friendly_community_user" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
