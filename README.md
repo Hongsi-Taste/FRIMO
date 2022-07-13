@@ -16,6 +16,8 @@
     
   - Trend Report
     괜찮은 open source 찾아보기
+    
+3) Apache license 사본 받고 적용
 ```
 
 ### 2. Refactoring 예상 작업
