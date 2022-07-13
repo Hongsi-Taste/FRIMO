@@ -16,6 +16,8 @@
     
   - Trend Report
     괜찮은 open source 찾아보기
+    - skydoves/DisneyCompose
+    - skydoves/Pokedex
     
 3) Apache license 사본 받고 적용
 ```
