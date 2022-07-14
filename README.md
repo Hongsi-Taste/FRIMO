@@ -100,5 +100,5 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
       Java -> Kotlin : Code > Convert java file to kotlin file
       Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile (정확하지는 않은 듯한 느낌을 받음)
 
-  
+    2. Kotlin과 Java를 같이 쓸 거면 단단히 준비하자. 도중에 Kotlin으로 작업했는데 오류 잡지 못하고 결국 포기했다.  
 ```
