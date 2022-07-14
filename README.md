@@ -40,7 +40,7 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
   - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
 
-현재 ballon을 보고 작업 중인데 Kotlin 언어에 대해 무지하다 보니 코드 이해가 어려움
+현재 ballon을 보고 작업 중인데 Kotlin 언어에 대해 무지하다 보니 코드 이해 및 활용이 어려움
 -> 구굴링
 -> https://kotlinlang.org/docs/home.html
 
@@ -69,6 +69,26 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
     1. White space is required before the encoding pseudo attribute in the XML declaration.
       '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
       가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주고 해결
+      
+    2. cannot find symbol  
+      컴파일 에러. 컴파일러가 식별자가 어디에 선언되어 있는지 찾지 못했을 때 발생. 아래 항목이 대표적이다.
+      - 식별자
+        철자가 잘못된 경우: 예를 들어 StringBuilder라는 이름 대신에 StringBiulder라고 작성한 경우.
+        대소문자 구분을 잘못한 경우: 예를 들어 StringBuilder 대신에 stringBuilder라고 작성한 경우.
+        밑줄(_)을 사용한 경우: 예를 들어, my_string 대신에 mystring라고 작성한 경우.
+
+      - 변수를 참조하는 식별자
+        변수를 선언하지 않은 경우
+        변수를 사용하는 시점에, 변수의 사용 범위를 벗어난 경우 (Overflow)
+
+      - Method
+        슈퍼클래스 혹은 인터페이스에 선언되지 않은 method를 호출하려고 할 경우
+        
+      - Class
+        class를 import 하지 않은 경우
+        "star"를 사용하여 import 했을 때, 해당 package 안에 class가 선언되지 않은 경우
+        class의 객체를 생성할 때 new 키워드를 사용하지 않은 경우
+
       
 6) Kotlin
     1. Java <-> Kotlin
