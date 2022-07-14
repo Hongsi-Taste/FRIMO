@@ -20,6 +20,8 @@
     - skydoves/Pokedex
     
 3) Apache license 사본 받고 적용
+
+4) Powermenu 관련 code를 Little me Diary로 옮기기 (확인 필요)
 ```
 
 ### 2. Refactoring 예상 작업
