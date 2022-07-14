@@ -207,7 +207,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:overScrollMode="never"
-            android:padding="8dp"
+            android:paddingTop="15dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/friendly_community_user" />
 
