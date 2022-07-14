@@ -5,14 +5,18 @@
 1) 현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
     
 2) UI 작업
+  - Main
+    Toolbar 색 변경
+  
   - Little Me Diary
   
   - Everytime FRIMO
   
   - Friendly Community
-    Edit profile button 클릭 시 profile을 조명하며 메뉴 나오기
-    Recycleview에서 user 클릭 시 위치를 보고 싶냐는 메뉴 나오기
-    Contents, Friend Candidate button 클릭 시 event
+    - RecyclerView adapter 구현 (-> friend 잘 나오는지 확인)
+    - Recycleview에서 user 클릭 시 위치를 보고 싶냐는 메뉴 나오기 (ballon)
+    - Edit profile button 클릭 시 profile을 조명하며 메뉴 나오기 (ballon)
+    - Contents, Friend Candidate button 클릭 시 event
     
   - Trend Report
     괜찮은 open source 찾아보기
