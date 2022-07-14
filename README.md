@@ -72,19 +72,19 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
       
     2. cannot find symbol  
       컴파일 에러. 컴파일러가 식별자가 어디에 선언되어 있는지 찾지 못했을 때 발생. 아래 항목이 대표적이다.
-      - 식별자
+      [1] 식별자
         철자가 잘못된 경우: 예를 들어 StringBuilder라는 이름 대신에 StringBiulder라고 작성한 경우.
         대소문자 구분을 잘못한 경우: 예를 들어 StringBuilder 대신에 stringBuilder라고 작성한 경우.
         밑줄(_)을 사용한 경우: 예를 들어, my_string 대신에 mystring라고 작성한 경우.
 
-      - 변수를 참조하는 식별자
+      [2] 변수를 참조하는 식별자
         변수를 선언하지 않은 경우
         변수를 사용하는 시점에, 변수의 사용 범위를 벗어난 경우 (Overflow)
 
-      - Method
+      [3] Method
         슈퍼클래스 혹은 인터페이스에 선언되지 않은 method를 호출하려고 할 경우
         
-      - Class
+      [4] Class
         class를 import 하지 않은 경우
         "star"를 사용하여 import 했을 때, 해당 package 안에 class가 선언되지 않은 경우
         class의 객체를 생성할 때 new 키워드를 사용하지 않은 경우
