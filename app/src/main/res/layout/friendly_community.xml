@@ -184,15 +184,15 @@
 
             <Button
                 android:id="@+id/btn_friend_candidate"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
-                android:backgroundTint="@color/black"
+                android:background="@drawable/custom_style"
                 android:text="Friend Candidate"
+                android:textColor="@color/black"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/label_interests"
@@ -209,9 +209,6 @@
             android:overScrollMode="never"
             android:padding="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_friend_candidate"
             tools:listitem="@layout/friendly_community_user" />
 
     </LinearLayout>
