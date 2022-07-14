@@ -45,9 +45,8 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
   - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
 -> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
 
-현재 ballon을 보고 작업 중인데 Kotlin 언어에 대해 무지하다 보니 코드 이해 및 활용이 어려움
--> 구굴링
--> https://kotlinlang.org/docs/home.html
+비교적 여유로운 방학에 Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으로 전환하여 작업하였으나 계속 실행하는 데 오류
+-> 다시 Java로 복귀
 
 ```
 
@@ -100,5 +99,5 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
       Java -> Kotlin : Code > Convert java file to kotlin file
       Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile (정확하지는 않은 듯한 느낌을 받음)
 
-    2. Kotlin과 Java를 같이 쓸 거면 단단히 준비하자. 도중에 Kotlin으로 작업했는데 오류 잡지 못하고 결국 포기했다.  
+    2. Kotlin과 Java를 같이 쓸 거면 단단히 준비하자. 도중에 Kotlin으로 작업했는데 오류 잡지 못하고 결국 포기했다.
 ```
