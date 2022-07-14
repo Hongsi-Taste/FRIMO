@@ -228,6 +228,7 @@
 
         </LinearLayout>
 
+        <!-- Linear 형식의 세로로 나열 된 리스트를 만들어주기 위해서 LinearLayout, Vertical 로 설정 -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
