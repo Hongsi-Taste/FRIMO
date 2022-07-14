@@ -6,7 +6,6 @@
     
 2) UI 작업
   - Main
-    Toolbar 색 변경
   
   - Little Me Diary
   
