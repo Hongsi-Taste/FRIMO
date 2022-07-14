@@ -56,7 +56,7 @@ public class PowerMenuUtils {
         .setTextTypeface(Typeface.create("sans-serif-medium", Typeface.BOLD)) // 서체, 글꼴
         .setSelectedTextColor(Color.WHITE)
         .setMenuColor(Color.WHITE)
-        .setSelectedMenuColor(ContextCompat.getColor(context, R.color.purple_200))
+        .setSelectedMenuColor(ContextCompat.getColor(context, R.color.black))
         .setOnMenuItemClickListener(onMenuItemClickListener)
         .setOnDismissListener(onDismissedListener)
         .setPreferenceName("HamburgerPowerMenu")  // saves the position automatically when the menu is selected. If we set the same preference name on the other PowerMenus, they will share the saving position.
