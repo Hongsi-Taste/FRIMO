@@ -1,6 +1,13 @@
 # FRIMO
 
-### 1. 예상 작업
+### 1. 작업 내용
+```
+1) Slide를 통해 기능 전환 및 Menu를 통해 Mode 전환
+
+2) Friendly Community 작업 진행 중
+```
+
+### 2. 예상 작업
 ```
 1) 현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
     
@@ -20,7 +27,7 @@
 4) Powermenu code 수정 (Balloon처럼 util 없어도 선언되게)
 ```
 
-### 2. Refactoring 예상 작업
+### 3. Refactoring 예상 작업
 ```
 Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
 
@@ -28,7 +35,7 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
 ```
 ----------
 
-### 3. 어려웠던 점
+### 4. 어려웠던 점
 ```
 1) 외부 라이브러리 사용 (Powermenu, Balloon 생성)
     
@@ -37,7 +44,7 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
 3) Java로 작업한 내용을 Kotlin으로 전환해 혼용해서 작업
 ```
 
-### 4. 배운 내용
+### 5. 배운 내용
 #### 1) Android
 ```
     1. Naming convention
