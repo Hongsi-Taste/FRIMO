@@ -3,15 +3,17 @@ package com.example.frimo;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.frimo.adapter.FragmentAdapter;
-import com.example.frimo.hamburgermenu.PowerMenuUtils;
+import com.skydoves.powermenu.MenuAnimation;
 import com.skydoves.powermenu.OnDismissedListener;
 import com.skydoves.powermenu.OnMenuItemClickListener;
 import com.skydoves.powermenu.PowerMenu;
@@ -58,9 +60,17 @@ public class MainActivity extends FragmentActivity {
         // Tool bar
         ic_menu = findViewById(R.id.ic_menu);
         textview_toolbar = findViewById(R.id.textview_toolbar);
-        hamburgerMenu =
-                PowerMenuUtils.getHamburgerPowerMenu(
-                        this, this, onHamburgerItemClickListener, onHamburgerMenuDismissedListener);
+        hamburgerMenu = new PowerMenu.Builder(this)
+                .addItem(new PowerMenuItem("Friend Mode", true))
+                .addItem(new PowerMenuItem("Secret Mode", false))
+                .addItem(new PowerMenuItem("Gallery Mode", false))
+                .setAnimation(MenuAnimation.SHOWUP_TOP_RIGHT) // popup시 menu가 뜨는 위치
+                .setTextColor(Color.BLACK)
+                .setTextGravity(Gravity.CENTER) // 글자 위치
+                .setSelectedMenuColor(Color.BLACK)
+                .setSelectedTextColor(Color.WHITE)
+                .setOnMenuItemClickListener(onHamburgerItemClickListener)
+                .build();
 
         // Slide 하여 fragment를 바꿈
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -158,10 +168,5 @@ public class MainActivity extends FragmentActivity {
                     }
                 }
             };
-
-    // hamburgermenu dismiss listener
-    private final OnDismissedListener onHamburgerMenuDismissedListener =
-            () -> Log.d("Test", "onDismissed hamburger menu");
-
 
 }

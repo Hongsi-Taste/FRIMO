@@ -64,7 +64,7 @@ public class FriendlyCommunity extends Fragment {
         // RecyclerView에 보여 줄 User 받아오기
         prepareData();
 
-        //Recyclerview
+        // Recyclerview
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         mAdapter = new FriendlyCommunityAdapter(users);
