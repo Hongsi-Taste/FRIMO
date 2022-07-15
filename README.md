@@ -13,7 +13,7 @@
     
 2) UI 작업
   [1] Friendly Community
-    Tablayout 적용 (본인 기존 UI가 더 맘에 들어 다음 회의 때 결정)
+    Tablayout 적용 (본인은 기존 UI가 더 맘에 들어 다음 회의 때 결정)
     
   [2] Trend Report
     괜찮은 open source 찾아보기
