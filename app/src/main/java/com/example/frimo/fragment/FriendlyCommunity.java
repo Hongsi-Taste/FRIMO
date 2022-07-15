@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -30,6 +33,7 @@ public class FriendlyCommunity extends Fragment {
     // Profile
     private ImageView profile;
     private Balloon profileBalloon;
+    private Button edit;
 
     private void prepareData() {
         users.add(new User(R.drawable.img_user, "User1", "I am user1"));
@@ -65,7 +69,7 @@ public class FriendlyCommunity extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-        // Profile
+        // Profile balloon
         profileBalloon= new Balloon
                 .Builder(requireContext()) // getContext()와 달리 NonNull 값을 받아옴
                 .setLayout(R.layout.friendly_community_custom_profile) // popup content 설정
@@ -80,6 +84,7 @@ public class FriendlyCommunity extends Fragment {
                 .setOverlayPaddingColorResource(R.color.black) // profile 화면 밖에 뜨는 동그란 선의 색
                 .build();
 
+        // Profile click event
         profile = rootView.findViewById(R.id.circleImageView);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +92,17 @@ public class FriendlyCommunity extends Fragment {
                 profileBalloon.showAlignBottom(profile);
             }
         });
+
+        // Edit Profile button
+        edit = profileBalloon.getContentView().findViewById(R.id.button_edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                profileBalloon.dismiss();
+                Toast.makeText(requireContext(), "Edit button clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         return rootView;
     }
