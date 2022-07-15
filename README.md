@@ -110,7 +110,7 @@ Fragment에서 getContext()를 했을 때 NULL이 나올 수 있어 Balloon을 �
 
     3. java.lang.NullPointerException: Parameter specified as non-null is null: method kotlin.jvm.internal.Intrinsics.checkNotNullParameter, parameter context
       Balloon을 초기화할 때 'Builder(Context)'에서 발생했는데 Fragment의 getContext()는 Activity와 달리 Null이 반환될 수 있어 발생한 문제
-      NULL이 나오는 경우는 여러 가지 방법이 있겠지만, Activity와 연결이 안 되었을 때 NULL이 나오며 본인은 여기서 문제가 발생했었다.
+      NULL이 나오는 경우는 여러 가지 방법이 있겠지만, 그중에서 Activity와 연결이 안 되었을 때 NULL이 나오며 본인은 여기서 문제가 발생했었다.
       따라서 onCreateView에서 Activity와 연결이 되었을 때 Balloon을 build 하여 해결하였다.
 
 ```
