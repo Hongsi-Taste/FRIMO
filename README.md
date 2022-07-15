@@ -111,6 +111,6 @@ Readme.md 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 �
 3. java.lang.NullPointerException: Parameter specified as non-null is null: method kotlin.jvm.internal.Intrinsics.checkNotNullParameter, parameter context
   NULL이 아닌 값이 Parameter로 들어가야 하나, NULL이 들어가 발생한 문제
   Fragment의 getContext()는 Activity와 달리 Null이 반환될 수 있고, Activity와 연결이 안 되어서 문제가 발생
-  View가 Create되어 Activity와 연결이 되었을 때 Balloon을 build 하여 해결함
+  View가 Create되어 Activity와 연결이 되었을 때 Balloon을 build 하여 해결
 
 ```
