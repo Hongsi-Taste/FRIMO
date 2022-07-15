@@ -5,7 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,10 +16,13 @@ import com.example.frimo.User;
 import com.skydoves.balloon.Balloon;
 import com.skydoves.balloon.BalloonAnimation;
 import com.skydoves.balloon.IconGravity;
+import com.skydoves.balloon.OnBalloonClickListener;
 
 import java.util.ArrayList;
 
 public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommunityAdapter.ViewHolder> {
+
+    // User data
     private ArrayList<User> users;
 
     // Constructor
@@ -26,6 +31,7 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+
         private final TextView textview_name;
         private final TextView textview_desc;
         private final ImageView image;
@@ -34,6 +40,7 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
         private Balloon userBalloon;
 
         public ViewHolder(View view) {
+
             super(view);
 
             // findViewById
@@ -44,7 +51,7 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
             // User balloon
             userBalloon = new Balloon
                     .Builder(view.getContext())
-                    .setText("Want to see where he is living?") // 보여줄 Text
+                    .setText("Click to see where this user lives") // 보여줄 Text
                     .setTextSize(15) // Text size
                     .setPadding(10) // Text와 테두리 사이의 간격 설정
                     .setIconDrawableResource(R.drawable.ic_gps) // GPS Icon
@@ -58,9 +65,19 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    userBalloon.showAlignBottom(view); // user balloon 보여주기
 
-                    // Todo: GPS Icon 눌렀을 때 지도 보여주기
+                    // show userBalloon
+                    userBalloon.showAlignBottom(view);
+
+                    // userBalloon click listener
+                    userBalloon.setOnBalloonClickListener(new OnBalloonClickListener() {
+                        @Override
+                        public void onBalloonClick(@NonNull View view) {
+
+                            // Todo: 어디에 사는지 보여주기 (지도)
+                            Toast.makeText(view.getContext(), "Balloon clicked", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             });
 
