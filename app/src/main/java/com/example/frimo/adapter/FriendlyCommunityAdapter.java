@@ -36,8 +36,6 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
         private final TextView textview_desc;
         private final ImageView image;
 
-        // User Balloon
-        private Balloon userBalloon;
 
         public ViewHolder(View view) {
 
@@ -49,7 +47,7 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
             image = (ImageView) view.findViewById(R.id.sample0_img);
 
             // User balloon
-            userBalloon = new Balloon
+            Balloon userBalloon = new Balloon
                     .Builder(view.getContext())
                     .setText("Click to see where this user lives") // 보여줄 Text
                     .setTextSize(15) // Text size

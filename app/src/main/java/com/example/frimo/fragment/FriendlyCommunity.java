@@ -29,14 +29,6 @@ public class FriendlyCommunity extends Fragment {
     private RecyclerView recyclerView;
     private FriendlyCommunityAdapter mAdapter;
 
-    // Profile
-    private ImageView profile;
-    private Balloon profileBalloon;
-    private Button edit;
-
-    // Friend Candidate (친구 추천)
-    private Button friendCandidate;
-
     private void prepareData() {
 
         // Todo: 서버랑 연결해 User data 받아오기
@@ -76,7 +68,7 @@ public class FriendlyCommunity extends Fragment {
         recyclerView.setAdapter(mAdapter);
 
         // Profile balloon
-        profileBalloon= new Balloon
+        Balloon profileBalloon= new Balloon
                 .Builder(requireContext()) // getContext()와 달리 NonNull 값을 받아옴
                 .setLayout(R.layout.friendly_community_custom_profile) // popup content 설정
                 .setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black)) // Background color 설정. 여기선 화살표 color 설정
@@ -87,8 +79,8 @@ public class FriendlyCommunity extends Fragment {
                 .setOverlayPaddingColorResource(R.color.black) // profile 화면 밖에 뜨는 동그란 선의 색
                 .build();
 
-        // Profile click event
-        profile = rootView.findViewById(R.id.circleImageView);
+        // Profile image
+        ImageView profile = rootView.findViewById(R.id.circleImageView);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +89,7 @@ public class FriendlyCommunity extends Fragment {
         });
 
         // Edit button (profile click 이후 나오는 button)
-        edit = profileBalloon.getContentView().findViewById(R.id.btn_edit);
+        Button edit = profileBalloon.getContentView().findViewById(R.id.btn_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +99,7 @@ public class FriendlyCommunity extends Fragment {
         });
 
         // Friend Candidate button
-        friendCandidate = rootView.findViewById(R.id.btn_friend_candidate);
+        Button friendCandidate = rootView.findViewById(R.id.btn_friend_candidate);
         friendCandidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
