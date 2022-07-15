@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -28,15 +27,9 @@ public class FriendlyCommunity extends Fragment {
     private RecyclerView recyclerView;
     private FriendlyCommunityAdapter mAdapter;
 
-    // Profile Ballon
+    // Profile
     private ImageView profile;
     private Balloon profileBalloon;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        prepareData();
-    }
 
     private void prepareData() {
         users.add(new User(R.drawable.img_user, "User1", "I am user1"));
@@ -59,7 +52,10 @@ public class FriendlyCommunity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.friendly_community, container, false);
 
-        //recyclerview
+        // RecyclerView에 보여 줄 User 받아오기
+        prepareData();
+
+        //Recyclerview
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         mAdapter = new FriendlyCommunityAdapter(users);
@@ -72,13 +68,16 @@ public class FriendlyCommunity extends Fragment {
         // Profile
         profileBalloon= new Balloon
                 .Builder(requireContext()) // getContext()와 달리 NonNull 값을 받아옴
-                .setLayout(R.layout.friendly_community_custom_profile)
-                .setArrowSize(10)
-                .setArrowOrientation(ArrowOrientation.TOP)
-                .setArrowPosition(0.5f)
-                .setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black))
-                .setBalloonAnimation(BalloonAnimation.CIRCULAR)
-                .setLifecycleOwner(this)
+                .setLayout(R.layout.friendly_community_custom_profile) // popup content 설정
+                .setArrowSize(10) // 화살표 size 설정
+                .setArrowOrientation(ArrowOrientation.TOP) // 화살표 방향 설정
+                .setArrowPosition(0.5f) // 화살표 위치 설정 (0.0 ~ 1.0)
+                .setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black)) // Background color 설정. 여기선 화살표 color 설정
+                .setBalloonAnimation(BalloonAnimation.CIRCULAR) // Balloon animation 설정
+                .setIsVisibleOverlay(true) // sets the visibility of the overlay for highlighting an anchor.
+                .setOverlayColorResource(R.color.overlay) // background color of the overlay using a color resource.
+                .setOverlayPadding(3f) // profile 화면을 감싸는 동그란 선의 굵기
+                .setOverlayPaddingColorResource(R.color.black) // profile 화면 밖에 뜨는 동그란 선의 색
                 .build();
 
         profile = rootView.findViewById(R.id.circleImageView);
