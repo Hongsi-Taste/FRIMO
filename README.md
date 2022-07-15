@@ -69,9 +69,9 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
     
           
     4. Kotlin
-    [1] Java <-> Kotlin
+    [1] Java <-> Kotlin (변환이 정확하지 않음. 수정 과정 필요)
       Java -> Kotlin : Code > Convert java file to kotlin file
-      Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile (정확하지는 않은 듯한 느낌을 받음)
+      Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile
 
     [2] When
     추후 작성
