@@ -51,8 +51,8 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
 ```
 
 ### 4. 배운 내용
+#### 1) Android
 ```
-1) Android
     1. Naming convention
     https://github.com/leapfrogtechnology/android-guidelines/blob/master/ResourcesGuidelines.md
     참고하여 파일 및 변수 이름 설정하자      
@@ -84,11 +84,15 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
     
       [4] By
         추후 작성
+```
 
-2) Git
+#### 2) Git
+```
     Readme.md 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
-    
-3) Error
+```
+
+#### 3) Error
+```
     1. White space is required before the encoding pseudo attribute in the XML declaration.
       '<?xml version="1.0"encoding="UTF-8"?>'로 작성해서 발생했던 문제
       가운데 띄어쓰기하여 '<?xml version="1.0" encoding="UTF-8"?>' 으로 바꿔주고 해결
@@ -113,8 +117,7 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
         class의 객체를 생성할 때 new 키워드를 사용하지 않은 경우
 
     3. java.lang.NullPointerException: Attempt to invoke virtual method on a null object reference
-      Skydoves/Balloon을 사용하면서 발생한 문제.
-      Balloon을 초기화 할 때 'Builder(Context)'에서 발생했는데
-      현재 해결중이다.
+      Balloon을 초기화할 때 'Builder(Context)'에서 발생했는데 Fragment의 getContext()는 Activity와 달리 Null이 반환될 수 있어 발생한 문제
+      현재 해결중.
 
 ```
