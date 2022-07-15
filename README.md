@@ -5,12 +5,6 @@
 1) 현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
     
 2) UI 작업
-  - Main
-  
-  - Little Me Diary
-  
-  - Everytime FRIMO
-  
   - Friendly Community
     - profile 클릭 시 profile을 조명하며 메뉴 나오기 (ballon)
     - Recycleview에서 user 클릭 시 위치를 보고 싶냐는 메뉴 나오기 (ballon)
@@ -24,7 +18,7 @@
     
 3) Apache license 사본 받고 적용
 
-4) Powermenu 관련 code를 Little me Diary로 옮기기 (확인 필요)
+4) Powermenu code 수정 (Balloon처럼 util 없어도 선언되게)
 ```
 
 ### 2. Refactoring 예상 작업
@@ -48,6 +42,8 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
 Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으로 전환하여 작업하였으나 계속 오류 발생
 -> 다시 Java로 복귀
 
+Fragment에서 getContext()를 했을 때 null이 나올 수 있는 문제
+
 ```
 
 ### 4. 배운 내용
@@ -66,10 +62,8 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
     
       [2] Fragment의 getContext()는 Activity와 달리 null일 수 있다. (https://github.com/skydoves/Balloon/issues/94)
     
-
     3. View and ViewGroup / Adapter
-      추후 작성
-    
+      추후 작성   
           
     4. Kotlin
       [1] Java <-> Kotlin (변환이 정확하지 않음. 수정 과정 필요)
