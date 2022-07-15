@@ -6,7 +6,7 @@
     
 2) UI 작업
   - Friendly Community
-    - profile 클릭 시 profile을 조명하며 메뉴 나오기 (ballon)
+    - profile 클릭 시 profile을 '조명하며' 메뉴 나오기 (ballon)
     - Recycleview에서 user 클릭 시 위치를 보고 싶냐는 메뉴 나오기 (ballon)
     - Tablayout 적용
     - Friend Candidate button 클릭 시 event
@@ -31,18 +31,16 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
 
 ### 3. 어려웠던 점
 ```
-처음으로 opensource 라이브러리를(powermenu) 사용했는데 guide를 보고 진행했음에도 menu를 생성하는 작업이 잘 안되었음
--> code clone해서 작업 및 엄재웅 선배님께 context에 대해 질문 및 학습 진행
+처음으로 opensource 라이브러리를(powermenu) 사용하여 작업하다 보니 guide를 보고 진행했음에도 menu를 생성하는 작업이 잘 안되었음
 
 아래 2개의 방법을 통해 powermenu를 click해 Mode(fragment)를 전환하는 작업이 잘 안되었음
   - getSupportFragmentManager().beginTransaction().replace().commit()
   - 새로운 adapter 생성 후 fragment 교체 이후 다시 기존 adapter로 변경
--> '안드로이드 개발 Q&A 및 팁'방에 질문해 '어피치'님과 'HN'님의 도움을 얻고 View에 대해 학습 진행
 
 Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으로 전환하여 작업하였으나 계속 오류 발생
 -> 다시 Java로 복귀
 
-Fragment에서 getContext()를 했을 때 null이 나올 수 있는 문제
+Fragment에서 getContext()를 했을 때 NULL이 나올 수 있어 Balloon을 초기화 하는데 어려움을 겪었음
 
 ```
 
@@ -112,6 +110,7 @@ Fragment에서 getContext()를 했을 때 null이 나올 수 있는 문제
 
     3. java.lang.NullPointerException: Parameter specified as non-null is null: method kotlin.jvm.internal.Intrinsics.checkNotNullParameter, parameter context
       Balloon을 초기화할 때 'Builder(Context)'에서 발생했는데 Fragment의 getContext()는 Activity와 달리 Null이 반환될 수 있어 발생한 문제
-      현재 해결중.
+      NULL이 나오는 경우는 여러 가지 방법이 있겠지만, Activity와 연결이 안 되었을 때 NULL이 나오며 본인은 여기서 문제가 발생했었다.
+      따라서 onCreateView에서 Activity와 연결이 되었을 때 Balloon을 build 하여 해결하였다.
 
 ```
