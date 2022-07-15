@@ -73,9 +73,6 @@ public class FriendlyCommunity extends Fragment {
         profileBalloon= new Balloon
                 .Builder(requireContext()) // getContext()와 달리 NonNull 값을 받아옴
                 .setLayout(R.layout.friendly_community_custom_profile) // popup content 설정
-                .setArrowSize(10) // 화살표 size 설정
-                .setArrowOrientation(ArrowOrientation.TOP) // 화살표 방향 설정
-                .setArrowPosition(0.5f) // 화살표 위치 설정 (0.0 ~ 1.0)
                 .setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black)) // Background color 설정. 여기선 화살표 color 설정
                 .setBalloonAnimation(BalloonAnimation.CIRCULAR) // Balloon animation 설정
                 .setIsVisibleOverlay(true) // sets the visibility of the overlay for highlighting an anchor.
