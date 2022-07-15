@@ -11,20 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.frimo.R;
 import com.example.frimo.User;
-import com.skydoves.balloon.ArrowOrientation;
-import com.skydoves.balloon.ArrowPositionRules;
 import com.skydoves.balloon.Balloon;
 import com.skydoves.balloon.BalloonAnimation;
-import com.skydoves.balloon.BalloonSizeSpec;
 import com.skydoves.balloon.IconGravity;
 
 import java.util.ArrayList;
 
 public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommunityAdapter.ViewHolder> {
     private ArrayList<User> users;
-
-    // User
-    private Balloon userBalloon;
 
     // Constructor
     public FriendlyCommunityAdapter(ArrayList<User> dataSet) {

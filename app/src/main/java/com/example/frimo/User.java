@@ -1,7 +1,5 @@
 package com.example.frimo;
 
-import android.graphics.drawable.Drawable;
-
 public class User {
     int image;
     String name;

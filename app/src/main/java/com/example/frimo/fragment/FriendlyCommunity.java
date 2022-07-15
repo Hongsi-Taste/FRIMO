@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.frimo.R;
 import com.example.frimo.User;
 import com.example.frimo.adapter.FriendlyCommunityAdapter;
-import com.skydoves.balloon.ArrowOrientation;
 import com.skydoves.balloon.Balloon;
 import com.skydoves.balloon.BalloonAnimation;
 
