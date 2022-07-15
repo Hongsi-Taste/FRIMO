@@ -50,22 +50,14 @@ public class FriendlyCommunityAdapter extends RecyclerView.Adapter<FriendlyCommu
             // User balloon
             userBalloon = new Balloon
                     .Builder(view.getContext())
-                    .setText("Want to see where he is living?")
-                    .setWidth(BalloonSizeSpec.WRAP)
-                    .setHeight(BalloonSizeSpec.WRAP)
-                    .setArrowSize(10)
-                    .setArrowPosition(0.5f)
-                    .setArrowPositionRules(ArrowPositionRules.ALIGN_ANCHOR)
-                    .setArrowOrientation(ArrowOrientation.TOP)
-                    .setPadding(10)
-                    .setCornerRadius(8f)
-                    .setElevation(4)
-                    .setIconDrawableResource(R.drawable.ic_gps) // GPS Icon으로 변경
-                    .setIconGravity(IconGravity.END)
-                    .setDismissWhenClicked(false)
-                    .setDismissWhenShowAgain(true)
-                    .setBalloonAnimation(BalloonAnimation.CIRCULAR)
-                    .setBackgroundColor(ContextCompat.getColor(view.getContext(), R.color.black)) // Background color 설정.
+                    .setText("Want to see where he is living?") // 보여줄 Text
+                    .setTextSize(15) // Text size
+                    .setPadding(10) // Text와 테두리 사이의 간격 설정
+                    .setIconDrawableResource(R.drawable.ic_gps) // GPS Icon
+                    .setIconGravity(IconGravity.START) // Icon 위치 설정
+                    .setDismissWhenClicked(false) // userBalloon이 뜨고 Balloon을 클릭 시 dismiss 할지 여부
+                    .setBalloonAnimation(BalloonAnimation.CIRCULAR) // Balloon animation
+                    .setBackgroundColor(ContextCompat.getColor(view.getContext(), R.color.black)) // Background color 설정
                     .build();
 
             // View click listener
