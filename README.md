@@ -79,7 +79,8 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
     [3] It
     추후 작성
     
-    [4] Kotlin과 Java를 같이 쓸 거면 단단히 준비하자. 도중에 Kotlin으로 작업했는데 오류 잡지 못하고 결국 포기했다.
+    [4] By
+    추후 작성
 
 2) Git
     Readme.md 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
