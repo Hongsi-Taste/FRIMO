@@ -29,9 +29,9 @@
 
 ### 3. Refactoring 예상 작업
 ```
-Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
+1) Tablayout와 Viewpager2를 이용한 fragment 변환 작업 (참고할 Reference가 많아지기 위해)
 
-Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backend로 Kotlin과 Spring을 합친 코프링 사용 중이라고 함)
+2) Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backend로 Kotlin과 Spring을 합친 코프링 사용 중이라고 함)
 ```
 ----------
 
