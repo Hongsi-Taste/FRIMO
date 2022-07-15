@@ -109,5 +109,9 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
         "star"를 사용하여 import 했을 때, 해당 package 안에 class가 선언되지 않은 경우
         class의 객체를 생성할 때 new 키워드를 사용하지 않은 경우
 
+    3. java.lang.NullPointerException: Attempt to invoke virtual method on a null object reference
+      Skydoves/Balloon을 사용하면서 발생한 문제.
+      Balloon을 초기화 할 때 'Builder(Context)'에서 발생했는데
+      현재 해결중이다.
 
 ```
