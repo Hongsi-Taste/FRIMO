@@ -30,11 +30,11 @@ Java로 작성된 Activity를 Kotlin으로 전환 (요즘 대기업에서 backen
 
 ### 3. 어려웠던 점
 ```
-1. 외부 라이브러리 사용 (Powermenu, Balloon 생성)
+1) 외부 라이브러리 사용 (Powermenu, Balloon 생성)
     
-2. Slide로 Fragment 전환하는 것을 구현한 이후 Menu를 이용한 추가 Fragment 전환
+2) Slide로 Fragment 전환하는 것을 구현한 이후 Menu를 이용한 추가 Fragment 전환
     
-3. Java로 작업한 내용을 Kotlin으로 전환해 혼용해서 작업
+3) Java로 작업한 내용을 Kotlin으로 전환해 혼용해서 작업
 ```
 
 ### 4. 배운 내용
