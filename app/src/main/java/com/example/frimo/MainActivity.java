@@ -5,7 +5,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 
 import com.example.frimo.adapter.FragmentAdapter;
 import com.skydoves.powermenu.MenuAnimation;
-import com.skydoves.powermenu.OnDismissedListener;
 import com.skydoves.powermenu.OnMenuItemClickListener;
 import com.skydoves.powermenu.PowerMenu;
 import com.skydoves.powermenu.PowerMenuItem;
@@ -32,7 +30,7 @@ public class MainActivity extends FragmentActivity {
 
     // Tool bar
     private ImageView ic_menu;
-    private PowerMenu hamburgerMenu;
+    private PowerMenu changeModeMenu;
     private TextView textview_toolbar;
 
     @Override
@@ -60,7 +58,7 @@ public class MainActivity extends FragmentActivity {
         // Tool bar
         ic_menu = findViewById(R.id.ic_menu);
         textview_toolbar = findViewById(R.id.textview_toolbar);
-        hamburgerMenu = new PowerMenu.Builder(this)
+        changeModeMenu = new PowerMenu.Builder(this)
                 .addItem(new PowerMenuItem("Friend Mode", true))
                 .addItem(new PowerMenuItem("Secret Mode", false))
                 .addItem(new PowerMenuItem("Gallery Mode", false))
@@ -122,18 +120,18 @@ public class MainActivity extends FragmentActivity {
 
     // hamburgermenu
     public void onHamburger(View view) {
-        if (hamburgerMenu.isShowing()) {
-            hamburgerMenu.dismiss();
+        if (changeModeMenu.isShowing()) {
+            changeModeMenu.dismiss();
             return;
         }
-        hamburgerMenu.showAsDropDown(view);
+        changeModeMenu.showAsDropDown(view);
     }
 
     // hamburgermenu가 띄워져 있는 상태에서 뒤로가기 버튼이 눌렀을 때 끄기
     @Override
     public void onBackPressed() {
-        if (hamburgerMenu.isShowing()) {
-            hamburgerMenu.dismiss();
+        if (changeModeMenu.isShowing()) {
+            changeModeMenu.dismiss();
         }
     }
 
@@ -144,7 +142,7 @@ public class MainActivity extends FragmentActivity {
                 public void onItemClick(int position, PowerMenuItem item) {
 
                     Toast.makeText(getBaseContext(), item.getTitle(), Toast.LENGTH_SHORT).show(); // toast message
-                    hamburgerMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
+                    changeModeMenu.setSelectedPosition(position); // menu에 선택된 항목으로 설정
 
                     // Hamburgermenu에서 Mode 클릭 시 fragment 전환 및 text 변경
                     switch (position) {
