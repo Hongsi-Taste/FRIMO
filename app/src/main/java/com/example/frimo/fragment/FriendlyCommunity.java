@@ -96,7 +96,7 @@ public class FriendlyCommunity extends Fragment {
         });
 
         // Edit button (profile click 이후 나오는 button)
-        edit = profileBalloon.getContentView().findViewById(R.id.button_edit);
+        edit = profileBalloon.getContentView().findViewById(R.id.btn_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
