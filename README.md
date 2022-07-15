@@ -58,32 +58,32 @@ Kotlin 공부를 하기 위해 도중에 Java로 작성된 파일을 Kotlin으�
     참고하여 파일 및 변수 이름 설정하자      
 
     2. Context
-    [1] Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉장히 복잡하게 되어있어서 한마디로 설명하기 어렵다.
+      [1] Context는 안드로이드 SDK 자체에 의존적이면서도 추상화가 굉장히 복잡하게 되어있어서 한마디로 설명하기 어렵다.
 
-    일반적으로 구분이 가능한 대표적인 Context로는 Application Context와 Activity에서 제공하는 Context 이렇게 두 가지가 있는데
-      - Application Context 같은 경우는 안드로이드 processor의 전반적인 시스템 resource에 대한 management를
-      - Acitivty의 Context의 경우에는 주로 안드로이드의 UI를 구성하기 위한 컴포넌트들에 대한 management를 (제공, 관리 등등) 한다.
+        일반적으로 구분이 가능한 대표적인 Context로는 Application Context와 Activity에서 제공하는 Context 이렇게 두 가지가 있는데
+          - Application Context 같은 경우는 안드로이드 processor의 전반적인 시스템 resource에 대한 management를
+          - Acitivty의 Context의 경우에는 주로 안드로이드의 UI를 구성하기 위한 컴포넌트들에 대한 management를 (제공, 관리 등등) 한다.
     
-    [2] Fragment의 getContext()는 Activity와 달리 null일 수 있다. (https://github.com/skydoves/Balloon/issues/94)
+      [2] Fragment의 getContext()는 Activity와 달리 null일 수 있다. (https://github.com/skydoves/Balloon/issues/94)
     
 
     3. View and ViewGroup / Adapter
-    추후 작성
+      추후 작성
     
           
     4. Kotlin
-    [1] Java <-> Kotlin (변환이 정확하지 않음. 수정 과정 필요)
-      Java -> Kotlin : Code > Convert java file to kotlin file
-      Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile
+      [1] Java <-> Kotlin (변환이 정확하지 않음. 수정 과정 필요)
+        Java -> Kotlin : Code > Convert java file to kotlin file
+        Kotlin -> Java : Tools > Kotlin > Show Kotlin Bytecode -> Decompile
 
-    [2] When
-    추후 작성
+      [2] When
+        추후 작성
     
-    [3] It
-    추후 작성
+      [3] It
+        추후 작성
     
-    [4] By
-    추후 작성
+      [4] By
+        추후 작성
 
 2) Git
     Readme.md 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
