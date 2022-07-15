@@ -6,7 +6,6 @@
     
 2) UI 작업
   - Friendly Community
-    - profile 클릭 시 profile을 '조명하며' 메뉴 나오기 (ballon)
     - Recycleview에서 user 클릭 시 위치를 보고 싶냐는 메뉴 나오기 (ballon)
     - Tablayout 적용
     - Friend Candidate button 클릭 시 event
