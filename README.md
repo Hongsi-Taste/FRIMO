@@ -12,13 +12,14 @@
 1) 현재까지 작업 한 내용에 대한 깊이 있는 이해 (view, adapter 등)
     
 2) UI 작업
-  - Friendly Community
-    - Tablayout 적용 (본인 기존 UI가 더 맘에 들어 다음 회의 때 결정)
+  [1] Friendly Community
+    Tablayout 적용 (본인 기존 UI가 더 맘에 들어 다음 회의 때 결정)
     
-  - Trend Report
+  [2] Trend Report
     괜찮은 open source 찾아보기
     - skydoves/DisneyCompose
     - skydoves/Pokedex
+    - wasabeef/awesome-android-ui
     
 3) Apache license 사본 받고 적용
 ```
