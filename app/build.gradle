@@ -33,8 +33,11 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'me.relex:circleindicator:2.1.6'
 
-    // powermenu
+    // Powermenu
     implementation "com.github.skydoves:powermenu:2.2.0"
+
+    // Ballon
+    implementation "com.github.skydoves:balloon:1.4.6"
 
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'

@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ImageView;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,14 +15,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.frimo.R;
 import com.example.frimo.User;
 import com.example.frimo.adapter.FriendlyCommunityAdapter;
+import com.skydoves.balloon.ArrowOrientation;
+import com.skydoves.balloon.Balloon;
+import com.skydoves.balloon.BalloonAnimation;
 
 import java.util.ArrayList;
 
 public class FriendlyCommunity extends Fragment {
 
+    // Recyclerview
     private ArrayList<User> users = new ArrayList<>();
     private RecyclerView recyclerView;
     private FriendlyCommunityAdapter mAdapter;
+
+    // Profile Ballon
+    private ImageView profile;
+    private Balloon profileBalloon;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,7 +60,7 @@ public class FriendlyCommunity extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.friendly_community, container, false);
 
         //recyclerview
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         mAdapter = new FriendlyCommunityAdapter(users);
 
@@ -59,6 +68,26 @@ public class FriendlyCommunity extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+
+        // Profile
+        profileBalloon= new Balloon
+                .Builder(requireContext()) // getContext()와 달리 NonNull 값을 받아옴
+                .setLayout(R.layout.friendly_community_custom_profile)
+                .setArrowSize(10)
+                .setArrowOrientation(ArrowOrientation.TOP)
+                .setArrowPosition(0.5f)
+                .setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black))
+                .setBalloonAnimation(BalloonAnimation.CIRCULAR)
+                .setLifecycleOwner(this)
+                .build();
+
+        profile = rootView.findViewById(R.id.circleImageView);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                profileBalloon.showAlignBottom(profile);
+            }
+        });
 
         return rootView;
     }
