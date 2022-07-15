@@ -38,6 +38,7 @@ public class FriendlyCommunity extends Fragment {
     private Button friendCandidate;
 
     private void prepareData() {
+
         // Todo: 서버랑 연결해 User data 받아오기
 
         users.add(new User(R.drawable.img_user, "User1", "I am user1"));
@@ -58,6 +59,7 @@ public class FriendlyCommunity extends Fragment {
     // Fragment를 만들고 레이아웃이랑 연결
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.friendly_community, container, false);
 
         // RecyclerView에 보여 줄 User 받아오기
