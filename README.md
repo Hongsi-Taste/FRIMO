@@ -110,7 +110,8 @@ Fragment에서 getContext()를 했을 때 null이 나올 수 있는 문제
         "star"를 사용하여 import 했을 때, 해당 package 안에 class가 선언되지 않은 경우
         class의 객체를 생성할 때 new 키워드를 사용하지 않은 경우
 
-    3. java.lang.NullPointerException: Attempt to invoke virtual method on a null object reference
+    3. java.lang.NullPointerException: 
+        Parameter specified as non-null is null: method kotlin.jvm.internal.Intrinsics.checkNotNullParameter, parameter context
       Balloon을 초기화할 때 'Builder(Context)'에서 발생했는데 Fragment의 getContext()는 Activity와 달리 Null이 반환될 수 있어 발생한 문제
       현재 해결중.
 
