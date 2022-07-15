@@ -21,8 +21,6 @@
     - skydoves/Pokedex
     
 3) Apache license 사본 받고 적용
-
-4) Powermenu code 수정 (Balloon처럼 util 없어도 선언되게)
 ```
 
 ### 3. Refactoring 예상 작업
