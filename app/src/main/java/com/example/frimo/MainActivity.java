@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.frimo.adapter.MyAdapter;
+import com.example.frimo.adapter.FragmentAdapter;
 import com.example.frimo.hamburgermenu.PowerMenuUtils;
 import com.skydoves.powermenu.OnDismissedListener;
 import com.skydoves.powermenu.OnMenuItemClickListener;
@@ -24,7 +24,7 @@ public class MainActivity extends FragmentActivity {
 
     // Slide fragement
     private ViewPager2 mPager;
-    private MyAdapter pagerAdapter;
+    private FragmentAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
 
@@ -42,7 +42,7 @@ public class MainActivity extends FragmentActivity {
         mPager = findViewById(R.id.viewpager);
 
         // Adapter
-        pagerAdapter = new MyAdapter(this, Mode.FRIEND);
+        pagerAdapter = new FragmentAdapter(this, Mode.FRIEND);
         mPager.setAdapter(pagerAdapter);
 
         // Indicator (아래 동그란 거 4개)

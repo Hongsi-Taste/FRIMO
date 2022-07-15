@@ -13,12 +13,12 @@ import com.example.frimo.fragment.LittleMeDiaryGalleryMode;
 import com.example.frimo.fragment.LittleMeDiarySecretMode;
 import com.example.frimo.fragment.TrendReport;
 
-public class MyAdapter extends FragmentStateAdapter {
+public class FragmentAdapter extends FragmentStateAdapter {
 
     private Mode mode;
 
     // constructor
-    public MyAdapter(FragmentActivity fa, Mode mode) {
+    public FragmentAdapter(FragmentActivity fa, Mode mode) {
         super(fa);
         setMode(mode);
     }
