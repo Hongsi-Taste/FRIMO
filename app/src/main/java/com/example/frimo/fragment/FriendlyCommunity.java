@@ -35,7 +35,12 @@ public class FriendlyCommunity extends Fragment {
     private Balloon profileBalloon;
     private Button edit;
 
+    // Friend Candidate (친구 추천)
+    private Button friendCandidate;
+
     private void prepareData() {
+        // Todo: 서버랑 연결해 User data 받아오기
+
         users.add(new User(R.drawable.img_user, "User1", "I am user1"));
         users.add(new User(R.drawable.img_user, "User2", "I love coffee"));
         users.add(new User(R.drawable.img_user, "User3", "I love exercise"));
@@ -90,13 +95,22 @@ public class FriendlyCommunity extends Fragment {
             }
         });
 
-        // Edit Profile button
+        // Edit button (profile click 이후 나오는 button)
         edit = profileBalloon.getContentView().findViewById(R.id.button_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 profileBalloon.dismiss();
                 Toast.makeText(requireContext(), "Edit button clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Friend Candidate button
+        friendCandidate = rootView.findViewById(R.id.btn_friend_candidate);
+        friendCandidate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(requireContext(), "Friend Candidate button clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
