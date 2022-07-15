@@ -80,7 +80,7 @@
 
 #### 2) Git
 ```
-    Readme.md 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
+Readme.md 작성 후 '< > Edit file' 옆에 있는 'Preview'를 통해 미리 볼 수 있다
 ```
 
 #### 3) Error
