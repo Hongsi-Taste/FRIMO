@@ -29,7 +29,7 @@ public class MainActivity extends FragmentActivity {
     private CircleIndicator3 mIndicator;
 
     // Tool bar
-    private ImageView ic_menu;
+    private ImageView icon;
     private PowerMenu changeModeMenu;
     private TextView textview_toolbar;
 
@@ -56,7 +56,7 @@ public class MainActivity extends FragmentActivity {
         mPager.setOffscreenPageLimit(3);
 
         // Tool bar
-        ic_menu = findViewById(R.id.ic_menu);
+        icon = findViewById(R.id.ic_menu);
         textview_toolbar = findViewById(R.id.textview_toolbar);
         changeModeMenu = new PowerMenu.Builder(this)
                 .addItem(new PowerMenuItem("Friend Mode", true))
@@ -84,22 +84,24 @@ public class MainActivity extends FragmentActivity {
                     // Little me diary 제외하고 menu 가리기
                     switch (position) {
                         case 0:
-                            ic_menu.setVisibility(View.VISIBLE);
+                            icon.setVisibility(View.VISIBLE);
+                            icon.setImageResource(R.drawable.ic_list);
                             textview_toolbar.setText(R.string.little_me_diary);
                             break;
 
                         case 1:
-                            ic_menu.setVisibility(View.GONE);
+                            icon.setVisibility(View.GONE);
                             textview_toolbar.setText(R.string.everytime_frimo);
                             break;
 
                         case 2:
-                            ic_menu.setVisibility(View.GONE);
+                            icon.setVisibility(View.GONE);
                             textview_toolbar.setText(R.string.friendly_community);
                             break;
 
                         case 3:
-                            ic_menu.setVisibility(View.GONE);
+                            icon.setVisibility(View.VISIBLE);
+                            icon.setImageResource(R.drawable.ic_setting);
                             textview_toolbar.setText(R.string.trend_report);
                             break;
                     }
@@ -118,7 +120,7 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    // hamburgermenu
+    // change mode menu
     public void onHamburger(View view) {
         if (changeModeMenu.isShowing()) {
             changeModeMenu.dismiss();
@@ -127,7 +129,7 @@ public class MainActivity extends FragmentActivity {
         changeModeMenu.showAsDropDown(view);
     }
 
-    // hamburgermenu가 띄워져 있는 상태에서 뒤로가기 버튼이 눌렀을 때 끄기
+    // change mode menu가 띄워져 있는 상태에서 뒤로가기 버튼이 눌렀을 때 끄기
     @Override
     public void onBackPressed() {
         if (changeModeMenu.isShowing()) {
@@ -135,7 +137,7 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    // hamburgermenu item click listener
+    // change mode menu item click listener
     private final OnMenuItemClickListener<PowerMenuItem> onHamburgerItemClickListener =
             new OnMenuItemClickListener<PowerMenuItem>() {
                 @Override
