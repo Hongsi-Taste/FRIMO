@@ -17,8 +17,6 @@ import com.skydoves.powermenu.OnMenuItemClickListener;
 import com.skydoves.powermenu.PowerMenu;
 import com.skydoves.powermenu.PowerMenuItem;
 
-import me.relex.circleindicator.CircleIndicator3;
-
 
 public class MainActivity extends FragmentActivity {
 
@@ -26,7 +24,6 @@ public class MainActivity extends FragmentActivity {
     private ViewPager2 mPager;
     private FragmentAdapter pagerAdapter;
     private int num_page = 4;
-    private CircleIndicator3 mIndicator;
 
     // Tool bar
     private ImageView icon;
@@ -44,11 +41,6 @@ public class MainActivity extends FragmentActivity {
         // Adapter
         pagerAdapter = new FragmentAdapter(this, Mode.FRIEND);
         mPager.setAdapter(pagerAdapter);
-
-        // Indicator (아래 동그란 거 4개)
-        mIndicator = findViewById(R.id.indicator);
-        mIndicator.setViewPager(mPager);
-        mIndicator.createIndicators(num_page, 0);
 
         // ViewPager Setting
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
@@ -106,13 +98,6 @@ public class MainActivity extends FragmentActivity {
                             break;
                     }
                 }
-            }
-
-            // Fragment가 변경됨에 따라 indicator 수정
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                mIndicator.animatePageSelected(position);
             }
 
         });
