@@ -1,5 +1,5 @@
 package com.example.frimo;
 
-public enum Mode {
+public enum LittleMeDiaryMode {
     FRIEND, SECRET, GALLERY
 }

@@ -26,10 +26,10 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_centerInParent="true"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/purple_700"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/trend_report"/>
+            android:text="Change Interest"/>
 
     </RelativeLayout>
 
