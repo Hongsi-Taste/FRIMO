@@ -5,33 +5,40 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.frimo.Mode;
+import com.example.frimo.mode.LittleMeDiaryMode;
+import com.example.frimo.mode.TrendReportMode;
 import com.example.frimo.fragment.EverytimeFRIMO;
 import com.example.frimo.fragment.FriendlyCommunity;
 import com.example.frimo.fragment.LittleMeDiaryFriendMode;
 import com.example.frimo.fragment.LittleMeDiaryGalleryMode;
 import com.example.frimo.fragment.LittleMeDiarySecretMode;
 import com.example.frimo.fragment.TrendReport;
+import com.example.frimo.fragment.TrendReportChangeInterest;
 
-public class MyAdapter extends FragmentStateAdapter {
+public class FragmentAdapter extends FragmentStateAdapter {
 
-    private Mode mode;
+    private LittleMeDiaryMode littleMeDiaryMode;
+    private TrendReportMode trendReportMode;
 
     // constructor
-    public MyAdapter(FragmentActivity fa, Mode mode) {
+    public FragmentAdapter(FragmentActivity fa, LittleMeDiaryMode diaryMode, TrendReportMode reportMode) {
         super(fa);
-        setMode(mode);
+        setLittleMeDiaryMode(diaryMode);
+        setTrendReportMode(reportMode);
     }
 
-    public void setMode(Mode mode) {
-        this.mode = mode;
+    public void setLittleMeDiaryMode(LittleMeDiaryMode mode) {
+        this.littleMeDiaryMode = mode;
+    }
+    public void setTrendReportMode(TrendReportMode mode) {
+        this.trendReportMode = mode;
     }
 
-    // 0번째 fragment를 재생성하기 위해 각각 아이디가 달라야 한다
+    // fragment를 재생성하기 위해 아이디 수정
     @Override
     public long getItemId(int position) {
         if (position == 0) {
-            switch (mode) {
+            switch (littleMeDiaryMode) {
                 case FRIEND:
                     return 11;
                 case SECRET:
@@ -39,7 +46,16 @@ public class MyAdapter extends FragmentStateAdapter {
                 default:
                     return 13;
             }
-        } else {
+        }
+        else if(position == 3){
+            switch (trendReportMode) {
+                case REPORT:
+                    return 31;
+                default:
+                    return 32;
+            }
+        }
+        else {
             return super.getItemId(position);
         }
     }
@@ -49,7 +65,7 @@ public class MyAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 0) {
-            switch (mode) {
+            switch (littleMeDiaryMode) {
                 case FRIEND:
                     return new LittleMeDiaryFriendMode();
                 case SECRET:
@@ -61,7 +77,15 @@ public class MyAdapter extends FragmentStateAdapter {
         }
         else if(position==1) return new EverytimeFRIMO();
         else if(position==2) return new FriendlyCommunity();
-        else return new TrendReport();
+        else {
+            switch (trendReportMode){
+                case REPORT:
+                    return new TrendReport();
+                case INTEREST:
+                    return new TrendReportChangeInterest();
+            }
+            return new TrendReport();
+        }
     }
 
     @Override

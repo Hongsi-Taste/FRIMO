@@ -7,47 +7,28 @@
     tools:context=".MainActivity">
 
     <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_500">
+        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_menu"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:onClick="onHamburger"
-            android:src="@drawable/ic_hamburger"
-            android:tint="@android:color/white" />
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_custom" />
 
-        <TextView
-            android:id="@+id/textview_toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="FRIMO"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    </androidx.appcompat.widget.Toolbar>
-
-    <!-- Frame, 여기에 여러 frame들이 바뀌면서 들어감 -->
+    <!-- Frame, 여기에 여러 fragment들이 바뀌면서 들어감 -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"
             android:clipToPadding="false"
             android:clipChildren="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
-        <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/indicator"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_gravity="bottom"/>
 
     </FrameLayout>
 
