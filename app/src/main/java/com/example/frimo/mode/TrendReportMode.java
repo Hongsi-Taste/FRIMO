@@ -1,4 +1,4 @@
-package com.example.frimo;
+package com.example.frimo.mode;
 
 public enum TrendReportMode {
     REPORT, INTEREST

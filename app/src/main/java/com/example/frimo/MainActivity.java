@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.frimo.adapter.FragmentAdapter;
+import com.example.frimo.mode.LittleMeDiaryMode;
+import com.example.frimo.mode.TrendReportMode;
 import com.skydoves.powermenu.MenuAnimation;
 import com.skydoves.powermenu.OnMenuItemClickListener;
 import com.skydoves.powermenu.PowerMenu;

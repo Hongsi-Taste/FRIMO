@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.frimo.LittleMeDiaryMode;
-import com.example.frimo.TrendReportMode;
+import com.example.frimo.mode.LittleMeDiaryMode;
+import com.example.frimo.mode.TrendReportMode;
 import com.example.frimo.fragment.EverytimeFRIMO;
 import com.example.frimo.fragment.FriendlyCommunity;
 import com.example.frimo.fragment.LittleMeDiaryFriendMode;

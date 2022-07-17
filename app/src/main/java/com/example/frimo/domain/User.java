@@ -1,4 +1,4 @@
-package com.example.frimo;
+package com.example.frimo.domain;
 
 public class User {
     int image;
